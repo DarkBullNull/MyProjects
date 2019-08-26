@@ -68,14 +68,14 @@ namespace SuperProject
                 checkBox1.Enabled = true;
                 goto RefreshCB1;
             };
-            
+
         }
         void Button1_Click(object sender, System.EventArgs e)
         {
             try
             {
                 if (Convert.ToInt32(textBox1.Text) >= (DateTime.Now.Year - 100) && Convert.ToInt32(textBox1.Text) <= DateTime.Now.Year
-                    && Convert.ToInt32(textBox2.Text) >= (DateTime.Now.Year - 100) && Convert.ToInt32(textBox1.Text) <= DateTime.Now.Year)
+                    && Convert.ToInt32(textBox2.Text) >= (DateTime.Now.Year - 100) && Convert.ToInt32(textBox2.Text) <= DateTime.Now.Year)
                 {
                     if (checkBox1.Checked == true)
                     {

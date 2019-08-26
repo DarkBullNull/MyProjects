@@ -1,0 +1,3 @@
+﻿  learning.cpp
+C:\Users\Mythilogic\Documents\MyProjects\MyProjects\learning\learning.cpp(9,12): warning C4244:  аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  learning.vcxproj -> C:\Users\Mythilogic\Documents\MyProjects\MyProjects\learning\Debug\learning.exe
