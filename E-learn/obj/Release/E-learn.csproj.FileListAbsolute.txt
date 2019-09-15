@@ -1,0 +1,7 @@
+C:\Users\Mythilogic\Documents\MyProjects\MyProjects\E-learn\bin\Release\E-learn.exe.config
+C:\Users\Mythilogic\Documents\MyProjects\MyProjects\E-learn\bin\Release\E-learn.exe
+C:\Users\Mythilogic\Documents\MyProjects\MyProjects\E-learn\bin\Release\E-learn.pdb
+C:\Users\Mythilogic\Documents\MyProjects\MyProjects\E-learn\obj\Release\E-learn.csprojAssemblyReference.cache
+C:\Users\Mythilogic\Documents\MyProjects\MyProjects\E-learn\obj\Release\E-learn.csproj.CoreCompileInputs.cache
+C:\Users\Mythilogic\Documents\MyProjects\MyProjects\E-learn\obj\Release\E-learn.exe
+C:\Users\Mythilogic\Documents\MyProjects\MyProjects\E-learn\obj\Release\E-learn.pdb
