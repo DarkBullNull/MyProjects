@@ -15,7 +15,11 @@ namespace E_learn
                 char[] num1 = check.ToCharArray();
                 if (((check.Length == 6) & (num > 0)) | ((num < 0) & (check.Length == 7)))
                 {
-                    Console.WriteLine($"Первое число: " + num1[0] + "\nТретье число: " + num1[2] + "\nШестое число: " + num1[5]);
+                    if (num < 0)
+                    {
+                        Console.WriteLine($"Первое число: " + num1[1] + "\nТретье число: " + num1[3] + "\nШестое число: " + num1[6]);
+                    }
+                    else Console.WriteLine($"Первое число: " + num1[0] + "\nТретье число: " + num1[2] + "\nШестое число: " + num1[5]);
                 }
                 else
                 {
