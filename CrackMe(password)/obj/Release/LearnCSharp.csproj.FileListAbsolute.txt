@@ -1,0 +1,9 @@
+C:\Users\Mythilogic\Documents\MyProjects\MyProjects\LearnCSharp\bin\Release\LearnCSharp.exe.config
+C:\Users\Mythilogic\Documents\MyProjects\MyProjects\LearnCSharp\bin\Release\LearnCSharp.exe
+C:\Users\Mythilogic\Documents\MyProjects\MyProjects\LearnCSharp\bin\Release\LearnCSharp.pdb
+C:\Users\Mythilogic\Documents\MyProjects\MyProjects\LearnCSharp\obj\Release\LearnCSharp.Form1.resources
+C:\Users\Mythilogic\Documents\MyProjects\MyProjects\LearnCSharp\obj\Release\LearnCSharp.Properties.Resources.resources
+C:\Users\Mythilogic\Documents\MyProjects\MyProjects\LearnCSharp\obj\Release\LearnCSharp.csproj.GenerateResource.cache
+C:\Users\Mythilogic\Documents\MyProjects\MyProjects\LearnCSharp\obj\Release\LearnCSharp.csproj.CoreCompileInputs.cache
+C:\Users\Mythilogic\Documents\MyProjects\MyProjects\LearnCSharp\obj\Release\LearnCSharp.exe
+C:\Users\Mythilogic\Documents\MyProjects\MyProjects\LearnCSharp\obj\Release\LearnCSharp.pdb
