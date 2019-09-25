@@ -36,7 +36,6 @@ namespace Anti_DebugNET.AntiDebugTools
                 if (BadProcessnameList.Contains(process.ProcessName) || BadWindowTextList.Contains(process.MainWindowTitle))
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.Write("BAD PROCESS FOUND: " + process.ProcessName);
 
                     isBadProcess = 1;
 
@@ -112,6 +111,7 @@ namespace Anti_DebugNET.AntiDebugTools
             BadProcessnameList.Add("Process Hacker");
             BadProcessnameList.Add("AMegaDumper");
             BadWindowTextList.Add("OLLYDBG");
+            BadWindowTextList.Add("Process Hacker");
             BadWindowTextList.Add("ida");
             BadWindowTextList.Add("disassembly");
             BadWindowTextList.Add("scylla");

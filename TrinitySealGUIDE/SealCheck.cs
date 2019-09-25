@@ -13,7 +13,7 @@ namespace TrinitySeal
         {
             if (CalculateMD5("Newtonsoft.Json.dll") != "4df6c8781e70c3a4912b5be796e6d337" || CalculateMD5(typeof(TrinitySeal.Seal).Assembly.Location) != "0788cb32d5eb03916c701e0d18e25a74")
             {
-                MessageBox.Show("Hash check failed! Exiting...", "TrinitySeal", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("BAD", "Hash error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Process.GetCurrentProcess().Kill();
             }
             else
