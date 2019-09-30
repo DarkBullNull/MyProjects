@@ -1,0 +1,78 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace @switch
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Выберите материал(доска, бумага, картон):");
+            string type = Console.ReadLine();
+            switch(type)
+            {
+                case "доска":
+                    Console.Write("Введите цвет доски(красный, желтый, оранжевый):");
+                    switch (Console.ReadLine())
+                    {
+                        case "красный":
+                            Console.Write("Выбранный материал: красная доска");
+                            break;
+                        case "желтый":
+                            Console.Write("Выбранный материал: желтая доска");
+                            break;
+                        case "оранжевый":
+                            Console.Write("Выбранный материал: оранжевая доска");
+                            break;
+                        default:
+                            Console.Write("Выбранного цвета нет в наличии");
+                            break;
+                    }
+                    break;
+                case "бумага":
+                    Console.WriteLine("Введите цвет картона(красный, желтый, оранжевый):");
+                    switch (Console.ReadLine())
+                    {
+                        case "красный":
+                            Console.Write("Выбранный материал: красная бумага");
+                            break;
+                        case "желтый":
+                            Console.Write("Выбранный материал: желтая бумага");
+                            break;
+                        case "оранжевый":
+                            Console.Write("Выбранный материал: оранжевая бумага");
+                            break;
+                        default:
+                            Console.Write("Выбранного цвета нет в наличии");
+                            break;
+                    }
+                    break;
+                case "картон":
+                    Console.Write("Введите цвет картона(красный, желтый, оранжевый):");
+                    switch (Console.ReadLine())
+                    {
+                        case "красный":
+                            Console.Write("Выбранный материал: красный картон");
+                            break;
+                        case "желтый":
+                            Console.Write("Выбранный материал: желтый картон");
+                            break;
+                        case "оранжевый":
+                            Console.Write("Выбранный материал: оранжевый картон");
+                            break;
+                        default:
+                            Console.Write("Выбранного цвет нет в наличии");
+                            break;
+                    }
+                    break;
+                default:
+                    Console.WriteLine("Выбранного материала нет в наличии");
+                    break;
+            }
+            Console.ReadKey();
+        }
+    }
+}

@@ -1,7 +1,0 @@
-C:\Users\Mythilogic\Documents\MyProjects\MyProjects\WayToCheating1[CSharp]\bin\Debug\WayToCheating1[CSharp].exe.config
-C:\Users\Mythilogic\Documents\MyProjects\MyProjects\WayToCheating1[CSharp]\bin\Debug\WayToCheating1[CSharp].exe
-C:\Users\Mythilogic\Documents\MyProjects\MyProjects\WayToCheating1[CSharp]\bin\Debug\WayToCheating1[CSharp].pdb
-C:\Users\Mythilogic\Documents\MyProjects\MyProjects\WayToCheating1[CSharp]\obj\Debug\WayToCheating1[CSharp].csprojAssemblyReference.cache
-C:\Users\Mythilogic\Documents\MyProjects\MyProjects\WayToCheating1[CSharp]\obj\Debug\WayToCheating1[CSharp].csproj.CoreCompileInputs.cache
-C:\Users\Mythilogic\Documents\MyProjects\MyProjects\WayToCheating1[CSharp]\obj\Debug\WayToCheating1[CSharp].exe
-C:\Users\Mythilogic\Documents\MyProjects\MyProjects\WayToCheating1[CSharp]\obj\Debug\WayToCheating1[CSharp].pdb

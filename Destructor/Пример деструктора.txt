@@ -1,0 +1,42 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace destructors
+{
+    class Destruct
+    {
+        public int x;
+
+        public Destruct(int i)
+        {
+            x = 1;
+        }
+        ~Destruct()
+        {
+            Console.WriteLine("Уничтожить " + x);
+        }
+        public void Generator(int i)
+        {
+            Destruct o = new Destruct(i);
+        }
+    }
+    class DestructDemo
+    {
+        static void Main(string[] args)
+        {
+            int count;
+            Destruct ob = new Destruct(0);
+            for(count=1; count<100000; count++)
+            {
+                ob.Generator(count);
+                Console.WriteLine(count)// после окончания цикла удалит переменную count и заменит на: ("Уничтожить" + x); 17 строка деструктор!
+            }
+            Console.WriteLine("Готово!");
+            Console.ReadKey();
+        }
+    }
+    
+}

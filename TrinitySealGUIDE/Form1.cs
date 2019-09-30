@@ -12,31 +12,22 @@ namespace TrinitySealGUIDE
         public Form1()
         {
             InitializeComponent();
-            //AntiDump.Initialize();
-            //AntiDebugging();
+            AntiDump.Initialize();// CHECK THIS!!!
+            AntiDebugging();// CHECK THIS!!!
             
         }
         public void Form1_Load(object sender, EventArgs e)
         {
             this.Opacity = 0D;
             SealCheck.HashChecks();
-            Seal.GrabVariables("QhBvXsQr5qnwSMtwS76QdKzuK", "kgMKV1psE4yBD31fvxkbuMronNaZtS6haUJzEpvOtB77L", "Dark_Bull", "7580545910");
-            Seal.Initialize("1.1");
             if (SealCheck.isValidDLL)
             {
-                if (ProgramVariables.Freemode)
-                {
-                    var mf = new MainForm();
-                    mf.Show();
-                    mf.Dispose();
-                }
-                else
                 {
                     Prch = 1;
                     Seal.InitializeForm(
-                    "kgMKV1psE4yBD31fvxkbuMronNaZtS6haUJzEpvOtB77L",
-                     "1.1",
-                    "QhBvXsQr5qnwSMtwS76QdKzuK",
+                    "Your_key",
+                     "Version",
+                    "VariableSecretKey",
                     this, new MainForm(),
                     SealColours.Purple);
                 }

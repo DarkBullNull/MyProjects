@@ -1,7 +1,0 @@
-C:\Users\Mythilogic\Documents\MyProjects\MyProjects\E-learning-3\bin\Debug\E-learning-3.exe.config
-C:\Users\Mythilogic\Documents\MyProjects\MyProjects\E-learning-3\bin\Debug\E-learning-3.exe
-C:\Users\Mythilogic\Documents\MyProjects\MyProjects\E-learning-3\bin\Debug\E-learning-3.pdb
-C:\Users\Mythilogic\Documents\MyProjects\MyProjects\E-learning-3\obj\Debug\E-learning-3.csprojAssemblyReference.cache
-C:\Users\Mythilogic\Documents\MyProjects\MyProjects\E-learning-3\obj\Debug\E-learning-3.csproj.CoreCompileInputs.cache
-C:\Users\Mythilogic\Documents\MyProjects\MyProjects\E-learning-3\obj\Debug\E-learning-3.exe
-C:\Users\Mythilogic\Documents\MyProjects\MyProjects\E-learning-3\obj\Debug\E-learning-3.pdb

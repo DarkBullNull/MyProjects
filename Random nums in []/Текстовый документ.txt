@@ -1,0 +1,38 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp12
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Console.WriteLine("Введите любое число");
+            double n = Convert.ToDouble(Console.ReadLine()); // ввожу n-ое число
+            double i = 0; // обычный счетчик
+            while (i<n) // генерируются числа от 0 до n
+            {
+                Console.WriteLine(i);
+                if (i % 2 == 0) // сортирую четные числа, т.к. при делении если нет остатка - четное число
+                {
+                    int[] chet = new int[Convert.ToInt32(n+1)]; // создаю массив
+                    chet[Convert.ToInt32(i)] = Convert.ToInt32(i); //записываю в масси четные числа
+                    Console.ForegroundColor = ConsoleColor.DarkRed; // меняю цвет четных чисел
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.DarkYellow; // меняю цвет нечетных чисел
+                    int[] nechet = new int[Convert.ToInt32(n+1)]; // сортирую нечетные числа, любой остаток - нечетное число
+                    nechet[Convert.ToInt32(i)] = Convert.ToInt32(i); //записываю в масси нечетные числа
+                }
+                i++;
+                Console.ResetColor(); // сбрасываю цвет консоли
+            }
+            Console.ReadKey();
+        }
+    }
+}
