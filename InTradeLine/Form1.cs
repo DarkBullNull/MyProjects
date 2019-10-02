@@ -25,7 +25,7 @@ namespace InTradeLine
             {
                 try
                 {
-                    result.Text = Math.Round((Convert.ToDouble(textBox1.Text) / dollar), 5).ToString();
+                    result.Text = " = " + Math.Round((Convert.ToDouble(textBox1.Text) / dollar), 5).ToString();
                 }
                 catch (Exception)
                 {
@@ -36,6 +36,18 @@ namespace InTradeLine
             }
         }
 
-        
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            if (CheckConnect.CheckSocket())
+            {
+                
+                this.Text += " [Подключение установлено]";
+            }
+            else
+            {
+                Form1 mainForm = new Form1();
+                this.Text += " [Подключение НЕ установлено]";
+            }
+        }
     }
 }

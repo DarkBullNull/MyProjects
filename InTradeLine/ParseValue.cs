@@ -2,6 +2,7 @@
 using System;
 using System.Linq;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
 
 namespace InTradeLine
 {
@@ -10,12 +11,22 @@ namespace InTradeLine
 
         public static double ParseDollar()
         {
-            var html = @"https://cbr.ru/";
-            HtmlWeb web = new HtmlWeb();
-            var htmlDoc = web.Load(html);
-            var value = htmlDoc.DocumentNode.SelectSingleNode("(//div[@class='w_data_wrap'])[1]").InnerText;
-            string resultString = string.Join(string.Empty, Regex.Matches(value, @"\d{2}\,\d{4}").OfType<Match>().Select(m => m.Value));
-            return Convert.ToDouble(resultString);
+            try
+            {
+                var html = @"https://cbr.ru/";
+                HtmlWeb web = new HtmlWeb();
+                var htmlDoc = web.Load(html);
+                var value = htmlDoc.DocumentNode.SelectSingleNode("(//div[@class='w_data_wrap'])[1]").InnerText;
+                string resultString = string.Join(string.Empty, Regex.Matches(value, @"\d{2}\,\d{4}").OfType<Match>().Select(m => m.Value));
+                return Convert.ToDouble(resultString);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ошибка с подключнием!", "Connection error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Environment.Exit(0);
+                return 0;
+            }
+            
         }
         public static double ParseEuro()
         {
