@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using HtmlAgilityPack;
+using System;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using HtmlAgilityPack;
 
 namespace InTradeLine
 {
     public class ParseValue
     {
-        
+
         public static double ParseDollar()
         {
             var html = @"https://cbr.ru/";
