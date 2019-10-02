@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace InTradeLine
@@ -15,7 +8,14 @@ namespace InTradeLine
         public Form1()
         {
             InitializeComponent();
-            helper.Text = ParseValue.ParseRRub().ToString();
+            double dollar = Convert.ToDouble(ParseValue.ParseDollar());
+            double euro = Convert.ToDouble(ParseValue.ParseEuro());
+            double btc = Convert.ToDouble(ParseValue.ParseBTC());
+            double eth = Convert.ToDouble(ParseValue.ParseETH());
+            courseDollar.Text += dollar + " руб.";
+            courseEuro.Text += euro + " руб.";
+            courseBTC.Text += btc + " руб.";
+            courseETH.Text += eth + " руб.";
         }
     }
 }
