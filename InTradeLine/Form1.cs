@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -10,275 +11,115 @@ namespace InTradeLine
 
         {
             InitializeComponent();
-
+            TextChanged();
             courseDollar.Text += dollar + " руб.";
             courseEuro.Text += euro + " руб.";
             courseBTC.Text += btc + " руб.";
             courseETH.Text += eth + " руб.";
+            //int IndexCombobox1 = Convert.ToInt32(comboBox1.SelectedItem);
+            //int IndexCombobox2 = Convert.ToInt32(comboBox2.SelectedItem);
         }
         double dollar = Convert.ToDouble(ParseValue.ParseDollar());
         double euro = Convert.ToDouble(ParseValue.ParseEuro());
         double btc = Convert.ToDouble(ParseValue.ParseBTC());
         double eth = Convert.ToDouble(ParseValue.ParseETH());
-        async private void textBox1_TextChanged(object sender, EventArgs e)
+        
+        async void TextChanged()
         {
             reCheck:
-            if ((comboBox1.Text == "Российский рубль") & (comboBox2.Text == "Доллар США"))
+            try
             {
-                try
+                if ((comboBox1.Text == "Российский рубль") & (comboBox2.Text == "Доллар США"))
                 {
                     result.Text = " = " + Math.Round((Convert.ToDouble(textBox1.Text) / dollar), 5).ToString();
                 }
-                catch (Exception)
-                {
-
-                    result.Text = "Что-то не то!";
-                }
-            }
-            if ((comboBox1.Text == "Российский рубль") & (comboBox2.Text == "Bitcoin"))
-            {
-                try
+                if ((comboBox1.Text == "Российский рубль") & (comboBox2.Text == "Bitcoin"))
                 {
                     result.Text = " = " + Math.Round((Convert.ToDouble(textBox1.Text) / btc), 12).ToString();
                 }
-                catch (Exception)
-                {
-
-                    result.Text = "Что-то не то!";
-                }
-            }
-            if ((comboBox1.Text == "Российский рубль") & (comboBox2.Text == "Ethereum"))
-            {
-                try
+                if ((comboBox1.Text == "Российский рубль") & (comboBox2.Text == "Ethereum"))
                 {
                     result.Text = " = " + Math.Round((Convert.ToDouble(textBox1.Text) / eth), 12).ToString();
                 }
-                catch (Exception)
-                {
-
-                    result.Text = "Что-то не то!";
-                }
-            }
-            if ((comboBox1.Text == "Российский рубль") & (comboBox2.Text == "Евро"))
-            {
-                try
+                if ((comboBox1.Text == "Российский рубль") & (comboBox2.Text == "Евро"))
                 {
                     result.Text = " = " + Math.Round((Convert.ToDouble(textBox1.Text) / euro), 5).ToString();
                 }
-                catch (Exception)
-                {
-
-                    result.Text = "Что-то не то!";
-                }
-            }
-            if ((comboBox1.Text == "Доллар США") & (comboBox2.Text == "Bitcoin"))
-            {
-                try
+                if ((comboBox1.Text == "Доллар США") & (comboBox2.Text == "Bitcoin"))
                 {
                     result.Text = " = " + Math.Round((Convert.ToDouble(textBox1.Text) * dollar / btc), 12).ToString();
                 }
-                catch (Exception)
-                {
-
-                    result.Text = "Что-то не то!";
-                }
-            }
-            if ((comboBox1.Text == "Доллар США") & (comboBox2.Text == "Российский рубль"))
-            {
-                try
+                if ((comboBox1.Text == "Доллар США") & (comboBox2.Text == "Российский рубль"))
                 {
                     result.Text = " = " + Math.Round((Convert.ToDouble(textBox1.Text) * dollar / 1), 5).ToString();
                 }
-                catch (Exception)
-                {
-
-                    result.Text = "Что-то не то!";
-                }
-            }
-            if ((comboBox1.Text == "Доллар США") & (comboBox2.Text == "Евро"))
-            {
-                try
+                if ((comboBox1.Text == "Доллар США") & (comboBox2.Text == "Евро"))
                 {
                     result.Text = " = " + Math.Round((Convert.ToDouble(textBox1.Text) * dollar / euro), 5).ToString();
                 }
-                catch (Exception)
-                {
-
-                    result.Text = "Что-то не то!";
-                }
-            }
-            if ((comboBox1.Text == "Доллар США") & (comboBox2.Text == "Ethereum"))
-            {
-                try
+                if ((comboBox1.Text == "Доллар США") & (comboBox2.Text == "Ethereum"))
                 {
                     result.Text = " = " + Math.Round((Convert.ToDouble(textBox1.Text) * dollar / eth), 12).ToString();
                 }
-                catch (Exception)
-                {
-
-                    result.Text = "Что-то не то!";
-                }
-            }
-            if ((comboBox1.Text == "Евро") & (comboBox2.Text == "Российский рубль"))
-            {
-                try
+                if ((comboBox1.Text == "Евро") & (comboBox2.Text == "Российский рубль"))
                 {
                     result.Text = " = " + Math.Round((Convert.ToDouble(textBox1.Text) * euro / 1), 5).ToString();
                 }
-                catch (Exception)
-                {
-
-                    result.Text = "Что-то не то!";
-                }
-            }
-            if ((comboBox1.Text == "Евро") & (comboBox2.Text == "Доллар США"))
-            {
-                try
+                if ((comboBox1.Text == "Евро") & (comboBox2.Text == "Доллар США"))
                 {
                     result.Text = " = " + Math.Round((Convert.ToDouble(textBox1.Text) * euro / dollar), 5).ToString();
                 }
-                catch (Exception)
-                {
-
-                    result.Text = "Что-то не то!";
-                }
-            }
-            if ((comboBox1.Text == "Евро") & (comboBox2.Text == "Bitcoin"))
-            {
-                try
+                if ((comboBox1.Text == "Евро") & (comboBox2.Text == "Bitcoin"))
                 {
                     result.Text = " = " + Math.Round((Convert.ToDouble(textBox1.Text) * euro / btc), 12).ToString();
                 }
-                catch (Exception)
-                {
-
-                    result.Text = "Что-то не то!";
-                }
-            }
-            if ((comboBox1.Text == "Евро") & (comboBox2.Text == "Ethereum"))
-            {
-                try
+                if ((comboBox1.Text == "Евро") & (comboBox2.Text == "Ethereum"))
                 {
                     result.Text = " = " + Math.Round((Convert.ToDouble(textBox1.Text) * euro / eth), 12).ToString();
                 }
-                catch (Exception)
-                {
-
-                    result.Text = "Что-то не то!";
-                }
-            }
-            if ((comboBox1.Text == "Bitcoin") & (comboBox2.Text == "Российский рубль"))
-            {
-                try
+                if ((comboBox1.Text == "Bitcoin") & (comboBox2.Text == "Российский рубль"))
                 {
                     result.Text = " = " + Math.Round((Convert.ToDouble(textBox1.Text) * btc / 1), 5).ToString();
                 }
-                catch (Exception)
-                {
-
-                    result.Text = "Что-то не то!";
-                }
-            }
-            if ((comboBox1.Text == "Bitcoin") & (comboBox2.Text == "Доллар США"))
-            {
-                try
+                if ((comboBox1.Text == "Bitcoin") & (comboBox2.Text == "Доллар США"))
                 {
                     result.Text = " = " + Math.Round((Convert.ToDouble(textBox1.Text) * btc / dollar), 5).ToString();
                 }
-                catch (Exception)
-                {
-
-                    result.Text = "Что-то не то!";
-                }
-            }
-            if ((comboBox1.Text == "Bitcoin") & (comboBox2.Text == "Евро"))
-            {
-                try
+                if ((comboBox1.Text == "Bitcoin") & (comboBox2.Text == "Евро"))
                 {
                     result.Text = " = " + Math.Round((Convert.ToDouble(textBox1.Text) * btc / euro), 5).ToString();
                 }
-                catch (Exception)
-                {
-
-                    result.Text = "Что-то не то!";
-                }
-            }
-            if ((comboBox1.Text == "Bitcoin") & (comboBox2.Text == "Ethereum"))
-            {
-                try
+                if ((comboBox1.Text == "Bitcoin") & (comboBox2.Text == "Ethereum"))
                 {
                     result.Text = " = " + Math.Round((Convert.ToDouble(textBox1.Text) * btc / eth), 12).ToString();
                 }
-                catch (Exception)
-                {
-
-                    result.Text = "Что-то не то!";
-                }
-            }
-            if ((comboBox1.Text == "Ethereum") & (comboBox2.Text == "Российский рубль"))
-            {
-                try
+                if ((comboBox1.Text == "Ethereum") & (comboBox2.Text == "Российский рубль"))
                 {
                     result.Text = " = " + Math.Round((Convert.ToDouble(textBox1.Text) * eth / 1), 12).ToString();
                 }
-                catch (Exception)
-                {
-
-                    result.Text = "Что-то не то!";
-                }
-            }
-            if ((comboBox1.Text == "Ethereum") & (comboBox2.Text == "Доллар США"))
-            {
-                try
+                if ((comboBox1.Text == "Ethereum") & (comboBox2.Text == "Доллар США"))
                 {
                     result.Text = " = " + Math.Round((Convert.ToDouble(textBox1.Text) * eth / dollar), 5).ToString();
                 }
-                catch (Exception)
-                {
-
-                    result.Text = "Что-то не то!";
-                }
-            }
-            if ((comboBox1.Text == "Ethereum") & (comboBox2.Text == "Евро"))
-            {
-                try
+                if ((comboBox1.Text == "Ethereum") & (comboBox2.Text == "Евро"))
                 {
                     result.Text = " = " + Math.Round((Convert.ToDouble(textBox1.Text) * eth / euro), 5).ToString();
                 }
-                catch (Exception)
-                {
-
-                    result.Text = "Что-то не то!";
-                }
-            }
-            if ((comboBox1.Text == "Ethereum") & (comboBox2.Text == "Bitcoin"))
-            {
-                try
+                if ((comboBox1.Text == "Ethereum") & (comboBox2.Text == "Bitcoin"))
                 {
                     result.Text = " = " + Math.Round((Convert.ToDouble(textBox1.Text) * eth / 12), 12).ToString();
                 }
-                catch (Exception)
-                {
-
-                    result.Text = "Что-то не то!";
-                }
-            }
-            await Task.Delay(500);
+                await Task.Delay(500);
+                goto reCheck;
             goto reCheck;
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            if (CheckConnect.CheckSocket())
-            {
-
-                this.Text += " [Подключение установлено]";
             }
-            else
+            catch (Exception)
             {
-                Form1 mainForm = new Form1();
-                this.Text += " [Подключение НЕ установлено]";
+                result.Text = "Что-то не то";
+                goto reCheck;
             }
+            
         }
+        
     }
 }
