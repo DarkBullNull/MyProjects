@@ -8,10 +8,9 @@ namespace InTradeLine
     public partial class Form1 : Form
     {
         public Form1()
-
         {
             InitializeComponent();
-            TextChanged();
+            TextChange();
             courseDollar.Text += dollar + " руб.";
             courseEuro.Text += euro + " руб.";
             courseBTC.Text += btc + " руб.";
@@ -23,8 +22,8 @@ namespace InTradeLine
         double euro = Convert.ToDouble(ParseValue.ParseEuro());
         double btc = Convert.ToDouble(ParseValue.ParseBTC());
         double eth = Convert.ToDouble(ParseValue.ParseETH());
-        
-        async void TextChanged()
+
+        async void TextChange()
         {
             reCheck:
             try
@@ -109,17 +108,13 @@ namespace InTradeLine
                 {
                     result.Text = " = " + Math.Round((Convert.ToDouble(textBox1.Text) * eth / 12), 12).ToString();
                 }
-                await Task.Delay(500);
-                goto reCheck;
-            goto reCheck;
             }
             catch (Exception)
             {
                 result.Text = "Что-то не то";
-                goto reCheck;
             }
-            
+            await Task.Delay(500);
+            goto reCheck;
         }
-        
     }
 }
