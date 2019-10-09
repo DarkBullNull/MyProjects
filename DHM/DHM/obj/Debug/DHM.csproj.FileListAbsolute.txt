@@ -1,0 +1,6 @@
+D:\123\DHM\DHM\bin\Debug\DHM.exe.config
+D:\123\DHM\DHM\bin\Debug\DHM.exe
+D:\123\DHM\DHM\bin\Debug\DHM.pdb
+D:\123\DHM\DHM\obj\Debug\DHM.csprojResolveAssemblyReference.cache
+D:\123\DHM\DHM\obj\Debug\DHM.exe
+D:\123\DHM\DHM\obj\Debug\DHM.pdb
