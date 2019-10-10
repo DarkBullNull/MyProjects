@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DHM
 {
@@ -12,36 +8,38 @@ namespace DHM
         {
             Console.Write("Введите количество секунд: ");
             int seconds = Convert.ToInt32(Console.ReadLine());
-            int minutes = seconds/60;
-            int hours = seconds/60/60;
-            int diff;
+            int minutes = seconds / 60;
+            int hours = seconds / 60 / 60;
             if (seconds < 60)
             {
-                Console.WriteLine("Прошло часов: " + hours + ", прошло минут: " + minutes + ", прошло секунд " + seconds);
+                WriteRes(hours, minutes, seconds);
             }
             else
             {
+                int diff;
                 if (hours == 0)
-	            {
+                {
                     diff = seconds - (minutes * 60);
-                    Console.WriteLine("Прошло часов: " + hours + ", прошло минут: " + minutes + ", прошло секунд " + diff);
-	            }
+                    WriteRes(hours, minutes, diff);
+                }
                 else
                 {
                     if (minutes >= 60)
                     {
-                        minutes = (minutes - ((minutes / 60) * 60));
-                        diff = seconds - (hours * 60 * 60 + minutes * 60);
-                        Console.WriteLine("Прошло часов: " + hours + ", прошло минут: " + minutes + ", прошло секунд " + diff);
+                        minutes -= (minutes / 60 * 60);
+                        diff = seconds - ((hours * 60 * 60) + minutes * 60);
+                        WriteRes(hours, minutes, diff);
                     }
                     else
                     {
-                        diff = seconds - (hours * 60 * 60 + minutes * 60);
-                        Console.WriteLine("Прошло часов: " + hours + ", прошло минут: " + minutes + ", прошло секунд " + diff);
+                        diff = seconds - ((hours * 60 * 60) + minutes * 60);
+                        WriteRes(hours, minutes, diff);
                     }
                 }
             }
             Console.ReadKey();
         }
+        private static void WriteRes(int hours, int minutes, int seconds) 
+            => Console.WriteLine("Прошло часов: " + hours + ", прошло минут: " + minutes + ", прошло секунд " + seconds);
     }
 }
