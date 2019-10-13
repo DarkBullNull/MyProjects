@@ -7,7 +7,18 @@
         mc:Ignorable="d"
         Title="TextReader" Height="287" Width="459" Closed="Window_Closed">
     <Grid>
-        <Button Content="Load File" HorizontalAlignment="Left" VerticalAlignment="Top" Width="116" Height="39" Click="Button_Click" Margin="1,1,0,0"/>
+        <Button Content="Load File" HorizontalAlignment="Left" VerticalAlignment="Top" Width="66" Height="30" Click="Button_Click" Margin="1,1,0,0" RenderTransformOrigin="0.5,0.5">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Label x:Name="CountLines" Content="Количество строк: " HorizontalAlignment="Left" Margin="-3,33,0,0" VerticalAlignment="Top" Height="28"/>
+        <Label x:Name="SizeFile" Content="Вес файла: " HorizontalAlignment="Left" Margin="-3,53,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

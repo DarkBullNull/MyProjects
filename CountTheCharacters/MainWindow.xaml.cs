@@ -18,6 +18,8 @@ namespace CountTheCharacters
         {
             var gf = new WorkWithFiles();
             gf.GetPath();
+            CountLines.Content = "Количество строк: " + gf.countLines;
+            SizeFile.Content = "Размер файла: " + gf.size.ToString() + " Мбайт";
         }
         private void Window_Closed(object sender, System.EventArgs e)
         {
