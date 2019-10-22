@@ -97,8 +97,9 @@
             this.label_captionWin.ForeColor = System.Drawing.Color.Cyan;
             this.label_captionWin.Location = new System.Drawing.Point(6, 25);
             this.label_captionWin.Name = "label_captionWin";
-            this.label_captionWin.Size = new System.Drawing.Size(0, 13);
+            this.label_captionWin.Size = new System.Drawing.Size(116, 13);
             this.label_captionWin.TabIndex = 1;
+            this.label_captionWin.Text = "CAPTION_WINDOWS";
             // 
             // groupBox3
             // 
