@@ -83,7 +83,7 @@ namespace CommonInfo
         private void WorkWithVideoAdapter()
         {
             ManagementObjectSearcher Win32_VideoController = // Win32_VideoController
-                new ManagementObjectSearcher("SELECT Name, MaxMemorySupported FROM Win32_VideoController");
+                new ManagementObjectSearcher("SELECT Name FROM Win32_VideoController");
             foreach (ManagementObject obj in Win32_VideoController.Get())
             {
                 captionVideoAdapterGlobal = (obj["Name"]).ToString(); // название видеокарты
