@@ -18,7 +18,10 @@ namespace CommonInfo
             label_busyRam.Text = "BusyRAM: " + infoPC.busyRAMGlobal + " Mb" + " (" + infoPC.percentBusyRAMGlobal + "%)";
             label_captionWin.Text = infoPC.CaptionGlobal + " (" + infoPC.OSArchitectureGlobal + ")";
             label_totalVirtualMemory.Text = "TotalVirtualMemory: " + infoPC.totalVirtualMemoryGlobal + " Mb";
-            label_selectedVirtualMemory.Text = "SelectedVirtualMemory: " + infoPC.selectedVirtualMemoryGlobal + " Mb" + " (" + infoPC.percentBusyVirtualMemoryGlobal + "%)";
+            label_selectedVirtualMemory.Text = "SelectedVirtualMemory: " + infoPC.selectedVirtualMemoryGlobal + 
+                " Mb" + " (" + infoPC.percentBusyVirtualMemoryGlobal + "%)";
+            label_captionProcessor.Text = "CPU Name: " + infoPC.processorName;
+
         }
 
         private void button1_Click(object sender, EventArgs e)
