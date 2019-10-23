@@ -9,6 +9,8 @@ namespace CommonInfo
         {
             WorkWithOperatingSystem();
             WorkWithProcessor();
+            WorkWithMotherBoard();
+            WorkWithVideoAdapter();
         }
         public string totalRAMGlobal { get; private set; }
         public string useRAMGlobal { get; private set; }
@@ -18,18 +20,21 @@ namespace CommonInfo
         public string percentUseVirtualMemoryGlobal { get; private set; }
         public string OSArchitectureGlobal { get; private set; }
         public string versionGlobal { get; private set; }
-        public string captionGlobal { get; private set; }
-        public string processorNameGlobal { get; private set; }
+        public string captionWindowsGlobal { get; private set; }
+        public string captionProcessorGlobal { get; private set; }
         public string numberOfCoresGlobal { get; private set; }
         public string serialNumberGlobal { get; private set; }
         public string nameUserGlobal { get; private set; }
         public string nameComputerGlobal { get; private set; }
+        public string captionMotherBoardGlobal { get; private set; }
+        public string companyMotherBoardGlobal { get; private set; }
+        public string captionVideoAdapterGlobal { get; private set; }
 
         private void WorkWithOperatingSystem()
         {
             ManagementObjectSearcher Win32_OperatingSystem = //запрос к WMI для получения коллекций (Win32_OperatingSystem)
                 new ManagementObjectSearcher("SELECT TotalVisibleMemorySize,FreePhysicalMemory, OSArchitecture, " +
-                "Version, Caption, TotalVirtualMemorySize, FreeVirtualMemory, CSName, RegisteredUser, SerialNumber  FROM Win32_OperatingSystem");
+                "Version, Caption, TotalVirtualMemorySize, FreeVirtualMemory, CSName, RegisteredUser, SerialNumber, BuildNumber FROM Win32_OperatingSystem");
             foreach (ManagementObject obj in Win32_OperatingSystem.Get())
             {
                 /*-----Virtual-Memory----*/
@@ -47,7 +52,7 @@ namespace CommonInfo
                 /*----------OS-----------*/
                 OSArchitectureGlobal = (obj["OSArchitecture"]).ToString(); // получаю разрядность системы(~64-разрядная)
                 versionGlobal = (obj["Version"]).ToString(); // сборка ОС(~"10.0.17763")
-                captionGlobal = (obj["Caption"]).ToString(); // ~"Майкрософт Windows 10 Корпоративная LTSC"
+                captionWindowsGlobal = (obj["Caption"]).ToString(); // ~"Майкрософт Windows 10 Корпоративная LTSC"
                 nameComputerGlobal = (obj["CSName"]).ToString(); // Name PC
                 nameUserGlobal = (obj["RegisteredUser"]).ToString(); // Name User
                 serialNumberGlobal = (obj["SerialNumber"]).ToString(); // product key
@@ -61,8 +66,27 @@ namespace CommonInfo
                 new ManagementObjectSearcher("SELECT Name, NumberOfCores, MaxClockSpeed FROM Win32_Processor");
             foreach (ManagementObject obj in Win32_Processor.Get())
             {
-                processorNameGlobal = (obj["Name"]).ToString();
+                captionProcessorGlobal = (obj["Name"]).ToString();
                 numberOfCoresGlobal = (obj["NumberOfCores"]).ToString();
+            }
+        }
+        private void WorkWithMotherBoard() // Win32_BaseBoard
+        {
+            ManagementObjectSearcher Win32_BaseBoard =
+                new ManagementObjectSearcher("SELECT Product, Manufacturer FROM Win32_BaseBoard");
+            foreach (ManagementObject obj in Win32_BaseBoard.Get())
+            {
+                captionMotherBoardGlobal = (obj["Product"]).ToString(); // модель мат. платы
+                companyMotherBoardGlobal = (obj["Manufacturer"]).ToString(); // производитель мат. платы
+            }
+        }
+        private void WorkWithVideoAdapter()
+        {
+            ManagementObjectSearcher Win32_VideoController = // Win32_VideoController
+                new ManagementObjectSearcher("SELECT Name, MaxMemorySupported FROM Win32_VideoController");
+            foreach (ManagementObject obj in Win32_VideoController.Get())
+            {
+                captionVideoAdapterGlobal = (obj["Name"]).ToString(); // название видеокарты
             }
         }
     }

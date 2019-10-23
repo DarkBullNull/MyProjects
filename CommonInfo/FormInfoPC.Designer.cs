@@ -33,6 +33,9 @@
             this.label_useRam = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label_productKey = new System.Windows.Forms.Label();
+            this.label_nameUser = new System.Windows.Forms.Label();
+            this.label_nameComputer = new System.Windows.Forms.Label();
             this.label_captionWin = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label_totalVirtualMemory = new System.Windows.Forms.Label();
@@ -41,13 +44,17 @@
             this.label_captionProcessor = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label_numCores = new System.Windows.Forms.Label();
-            this.label_nameComputer = new System.Windows.Forms.Label();
-            this.label_nameUser = new System.Windows.Forms.Label();
-            this.label_productKey = new System.Windows.Forms.Label();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label_captionMotherBoard = new System.Windows.Forms.Label();
+            this.label_companyMotherBoard = new System.Windows.Forms.Label();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.label_captionVideoCard = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // label_totalRam
@@ -95,17 +102,50 @@
             this.groupBox2.ForeColor = System.Drawing.Color.Cyan;
             this.groupBox2.Location = new System.Drawing.Point(232, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(538, 163);
+            this.groupBox2.Size = new System.Drawing.Size(538, 79);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "About PC";
+            // 
+            // label_productKey
+            // 
+            this.label_productKey.AutoSize = true;
+            this.label_productKey.BackColor = System.Drawing.Color.Black;
+            this.label_productKey.ForeColor = System.Drawing.Color.Cyan;
+            this.label_productKey.Location = new System.Drawing.Point(6, 59);
+            this.label_productKey.Name = "label_productKey";
+            this.label_productKey.Size = new System.Drawing.Size(87, 13);
+            this.label_productKey.TabIndex = 4;
+            this.label_productKey.Text = "PRODUCT_KEY";
+            // 
+            // label_nameUser
+            // 
+            this.label_nameUser.AutoSize = true;
+            this.label_nameUser.BackColor = System.Drawing.Color.Black;
+            this.label_nameUser.ForeColor = System.Drawing.Color.Cyan;
+            this.label_nameUser.Location = new System.Drawing.Point(6, 45);
+            this.label_nameUser.Name = "label_nameUser";
+            this.label_nameUser.Size = new System.Drawing.Size(74, 13);
+            this.label_nameUser.TabIndex = 3;
+            this.label_nameUser.Text = "NAME_USER";
+            // 
+            // label_nameComputer
+            // 
+            this.label_nameComputer.AutoSize = true;
+            this.label_nameComputer.BackColor = System.Drawing.Color.Black;
+            this.label_nameComputer.ForeColor = System.Drawing.Color.Cyan;
+            this.label_nameComputer.Location = new System.Drawing.Point(6, 30);
+            this.label_nameComputer.Name = "label_nameComputer";
+            this.label_nameComputer.Size = new System.Drawing.Size(105, 13);
+            this.label_nameComputer.TabIndex = 2;
+            this.label_nameComputer.Text = "NAME_COMPUTER";
             // 
             // label_captionWin
             // 
             this.label_captionWin.AutoSize = true;
             this.label_captionWin.BackColor = System.Drawing.Color.Black;
             this.label_captionWin.ForeColor = System.Drawing.Color.Cyan;
-            this.label_captionWin.Location = new System.Drawing.Point(6, 25);
+            this.label_captionWin.Location = new System.Drawing.Point(6, 15);
             this.label_captionWin.Name = "label_captionWin";
             this.label_captionWin.Size = new System.Drawing.Size(116, 13);
             this.label_captionWin.TabIndex = 1;
@@ -150,13 +190,13 @@
             // 
             this.btn_exitFormPCInfo.BackColor = System.Drawing.Color.BlanchedAlmond;
             this.btn_exitFormPCInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn_exitFormPCInfo.Location = new System.Drawing.Point(-7, 354);
+            this.btn_exitFormPCInfo.Location = new System.Drawing.Point(-8, 256);
             this.btn_exitFormPCInfo.Name = "btn_exitFormPCInfo";
             this.btn_exitFormPCInfo.Size = new System.Drawing.Size(788, 26);
             this.btn_exitFormPCInfo.TabIndex = 6;
-            this.btn_exitFormPCInfo.Text = "Close";
+            this.btn_exitFormPCInfo.Text = "Back";
             this.btn_exitFormPCInfo.UseVisualStyleBackColor = false;
-            this.btn_exitFormPCInfo.Click += new System.EventHandler(this.button1_Click);
+            this.btn_exitFormPCInfo.Click += new System.EventHandler(this.btn_exitFormPCInfo_Click);
             // 
             // label_captionProcessor
             // 
@@ -177,7 +217,7 @@
             this.groupBox4.ForeColor = System.Drawing.Color.Cyan;
             this.groupBox4.Location = new System.Drawing.Point(3, 172);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(351, 79);
+            this.groupBox4.Size = new System.Drawing.Size(380, 79);
             this.groupBox4.TabIndex = 7;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "CPU Info";
@@ -193,45 +233,72 @@
             this.label_numCores.TabIndex = 3;
             this.label_numCores.Text = "NUM_CORES";
             // 
-            // label_nameComputer
+            // groupBox5
             // 
-            this.label_nameComputer.AutoSize = true;
-            this.label_nameComputer.BackColor = System.Drawing.Color.Black;
-            this.label_nameComputer.ForeColor = System.Drawing.Color.Cyan;
-            this.label_nameComputer.Location = new System.Drawing.Point(6, 43);
-            this.label_nameComputer.Name = "label_nameComputer";
-            this.label_nameComputer.Size = new System.Drawing.Size(105, 13);
-            this.label_nameComputer.TabIndex = 2;
-            this.label_nameComputer.Text = "NAME_COMPUTER";
+            this.groupBox5.BackColor = System.Drawing.Color.Black;
+            this.groupBox5.Controls.Add(this.label_captionMotherBoard);
+            this.groupBox5.Controls.Add(this.label_companyMotherBoard);
+            this.groupBox5.ForeColor = System.Drawing.Color.Cyan;
+            this.groupBox5.Location = new System.Drawing.Point(232, 88);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(538, 79);
+            this.groupBox5.TabIndex = 8;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Mother Board";
             // 
-            // label_nameUser
+            // label_captionMotherBoard
             // 
-            this.label_nameUser.AutoSize = true;
-            this.label_nameUser.BackColor = System.Drawing.Color.Black;
-            this.label_nameUser.ForeColor = System.Drawing.Color.Cyan;
-            this.label_nameUser.Location = new System.Drawing.Point(6, 62);
-            this.label_nameUser.Name = "label_nameUser";
-            this.label_nameUser.Size = new System.Drawing.Size(74, 13);
-            this.label_nameUser.TabIndex = 3;
-            this.label_nameUser.Text = "NAME_USER";
+            this.label_captionMotherBoard.AutoSize = true;
+            this.label_captionMotherBoard.BackColor = System.Drawing.Color.Black;
+            this.label_captionMotherBoard.ForeColor = System.Drawing.Color.Cyan;
+            this.label_captionMotherBoard.Location = new System.Drawing.Point(6, 25);
+            this.label_captionMotherBoard.Name = "label_captionMotherBoard";
+            this.label_captionMotherBoard.Size = new System.Drawing.Size(145, 13);
+            this.label_captionMotherBoard.TabIndex = 0;
+            this.label_captionMotherBoard.Text = "CAPTION_MOTHERBOARD";
             // 
-            // label_productKey
+            // label_companyMotherBoard
             // 
-            this.label_productKey.AutoSize = true;
-            this.label_productKey.BackColor = System.Drawing.Color.Black;
-            this.label_productKey.ForeColor = System.Drawing.Color.Cyan;
-            this.label_productKey.Location = new System.Drawing.Point(6, 81);
-            this.label_productKey.Name = "label_productKey";
-            this.label_productKey.Size = new System.Drawing.Size(87, 13);
-            this.label_productKey.TabIndex = 4;
-            this.label_productKey.Text = "PRODUCT_KEY";
+            this.label_companyMotherBoard.AutoSize = true;
+            this.label_companyMotherBoard.BackColor = System.Drawing.Color.Black;
+            this.label_companyMotherBoard.ForeColor = System.Drawing.Color.Cyan;
+            this.label_companyMotherBoard.Location = new System.Drawing.Point(6, 47);
+            this.label_companyMotherBoard.Name = "label_companyMotherBoard";
+            this.label_companyMotherBoard.Size = new System.Drawing.Size(151, 13);
+            this.label_companyMotherBoard.TabIndex = 1;
+            this.label_companyMotherBoard.Text = "COMPANY_MOTHERBOARD";
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.BackColor = System.Drawing.Color.Black;
+            this.groupBox6.Controls.Add(this.label_captionVideoCard);
+            this.groupBox6.ForeColor = System.Drawing.Color.Cyan;
+            this.groupBox6.Location = new System.Drawing.Point(389, 173);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(381, 79);
+            this.groupBox6.TabIndex = 9;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "GPU Info";
+            // 
+            // label_captionVideoCard
+            // 
+            this.label_captionVideoCard.AutoSize = true;
+            this.label_captionVideoCard.BackColor = System.Drawing.Color.Black;
+            this.label_captionVideoCard.ForeColor = System.Drawing.Color.Cyan;
+            this.label_captionVideoCard.Location = new System.Drawing.Point(6, 37);
+            this.label_captionVideoCard.Name = "label_captionVideoCard";
+            this.label_captionVideoCard.Size = new System.Drawing.Size(123, 13);
+            this.label_captionVideoCard.TabIndex = 2;
+            this.label_captionVideoCard.Text = "CAPTION_VIDEOCARD";
             // 
             // FormInfoPC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(773, 378);
+            this.ClientSize = new System.Drawing.Size(773, 283);
+            this.Controls.Add(this.groupBox6);
+            this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.btn_exitFormPCInfo);
             this.Controls.Add(this.groupBox3);
@@ -253,6 +320,10 @@
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -274,5 +345,10 @@
         private System.Windows.Forms.Label label_nameComputer;
         private System.Windows.Forms.Label label_nameUser;
         private System.Windows.Forms.Label label_productKey;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Label label_captionMotherBoard;
+        private System.Windows.Forms.Label label_companyMotherBoard;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Label label_captionVideoCard;
     }
 }
