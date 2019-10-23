@@ -13,6 +13,7 @@ namespace CommonInfo
         private string Path { get; set; }
         void fileInfo()
         {
+            var testTuple = new Tuple<int, int, int,int, int>(1,5,6,7,7);
             FileInfo fi = new FileInfo(Path);
             Console.WriteLine
                 (

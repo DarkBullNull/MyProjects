@@ -15,12 +15,16 @@ namespace CommonInfo
         {
             var infoPC = new PCInformation();
             label_totalRam.Text = "TotalRAM: " + infoPC.totalRAMGlobal + " Mb";
-            label_busyRam.Text = "BusyRAM: " + infoPC.busyRAMGlobal + " Mb" + " (" + infoPC.percentBusyRAMGlobal + "%)";
-            label_captionWin.Text = infoPC.CaptionGlobal + " (" + infoPC.OSArchitectureGlobal + ")";
+            label_useRam.Text = "UseRAM: " + infoPC.useRAMGlobal + " Mb" + " (" + infoPC.percentUseRAMGlobal + "%)";
+            label_captionWin.Text = infoPC.captionGlobal + " (" + infoPC.OSArchitectureGlobal + ")" + " | Build(" + infoPC.versionGlobal + ")";
             label_totalVirtualMemory.Text = "TotalVirtualMemory: " + infoPC.totalVirtualMemoryGlobal + " Mb";
             label_selectedVirtualMemory.Text = "SelectedVirtualMemory: " + infoPC.selectedVirtualMemoryGlobal + 
-                " Mb" + " (" + infoPC.percentBusyVirtualMemoryGlobal + "%)";
-            label_captionProcessor.Text = "CPU Name: " + infoPC.processorName;
+                " Mb" + " (" + infoPC.percentUseVirtualMemoryGlobal + "%)";
+            label_captionProcessor.Text = "CPU Name: " + infoPC.processorNameGlobal;
+            label_numCores.Text = "Count Cores: " + infoPC.numberOfCoresGlobal;
+            label_nameUser.Text = "User Name: " + infoPC.nameUserGlobal;
+            label_nameComputer.Text = "Computer Name: " + infoPC.nameComputerGlobal;
+            label_productKey.Text = "Product-key: " + infoPC.serialNumberGlobal;
 
         }
 
