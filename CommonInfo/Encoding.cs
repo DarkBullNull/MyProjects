@@ -13,9 +13,9 @@ namespace CommonInfo
             ComputeSHA256Checksum(Path);
             ComputeMD5Checksum(Path);
         }
-        private string SHA1 { get; set; }
-        private string SHA256 { get; set; }
-        private string MD5 { get; set; }
+        public string SHA1 { get; private set; }
+        public string SHA256 { get; private set; }
+        public string MD5 { get; private set; }
         private string Path { get; set; }
         private byte[] ByteFile
         {
@@ -42,8 +42,7 @@ namespace CommonInfo
             using (SHA1 sha1 = new SHA1CryptoServiceProvider())
             {
                 byte[] checkSum = sha1.ComputeHash(ByteFile);
-                SHA1 = BitConverter.ToString(checkSum).Replace("-", String.Empty);
-                Console.WriteLine("\nSHA1: " + SHA1.ToLower());
+                SHA1 = BitConverter.ToString(checkSum).Replace("-", String.Empty).ToLower();
             }
         }
         void ComputeSHA256Checksum(string Path)
@@ -51,8 +50,7 @@ namespace CommonInfo
             using (SHA256 sha256 = new SHA256CryptoServiceProvider())
             {
                 byte[] checkSum = sha256.ComputeHash(ByteFile);
-                SHA256 = BitConverter.ToString(checkSum).Replace("-", String.Empty);
-                Console.WriteLine("SHA256: " + SHA256.ToLower());
+                SHA256 = BitConverter.ToString(checkSum).Replace("-", String.Empty).ToLower();
             }
         }
 
@@ -61,8 +59,7 @@ namespace CommonInfo
             using (MD5 md5 = new MD5CryptoServiceProvider())
             {
                 byte[] checkSum = md5.ComputeHash(ByteFile);
-                MD5 = BitConverter.ToString(checkSum).Replace("-", String.Empty);
-                Console.WriteLine("MD5: " + MD5.ToLower());
+                MD5 = BitConverter.ToString(checkSum).Replace("-", String.Empty).ToLower();
             }
         }
     }

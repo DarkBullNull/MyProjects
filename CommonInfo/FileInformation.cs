@@ -11,21 +11,21 @@ namespace CommonInfo
             fileInfo();
         }
         private string Path { get; set; }
+        public string extension { get; private set; }
+        public string creation_Time { get; private set; }
+        public string lastAccessTime { get; private set; }
+        public string lastWriteTime { get; private set; }
+        public string size { get; private set; }
+        public string pathFullName { get; private set; }
         void fileInfo()
         {
-            var testTuple = new Tuple<int, int, int,int, int>(1,5,6,7,7);
             FileInfo fi = new FileInfo(Path);
-            Console.WriteLine
-                (
-                "\nExtension: " + fi.Extension +
-                "\nPath: " + fi.FullName +
-                "\nCreation Time: " + fi.CreationTime +
-                "\nLastAccessTime: " + fi.LastAccessTime +
-                "\nLastWriteTime: " + fi.LastWriteTime +
-                "\nSize: " + fi.Length / 1024 / 1024 + " Mb | " + fi.Length / 1024 +
-                " Kb | " + fi.Length +
-                " Byte"
-                );
+            extension = "Extension: " + fi.Extension;
+            pathFullName = "Path: " + fi.FullName;
+            creation_Time = "Creation Time: " + fi.CreationTime;
+            lastAccessTime = "LastAccessTime: " + fi.LastAccessTime;
+            lastWriteTime = "LastWriteTime: " + fi.LastWriteTime;
+            size = "Size: " + fi.Length / 1024 / 1024 + " Mb | " + fi.Length / 1024 + " Kb | " + fi.Length + " Byte";
         }
     }
 }

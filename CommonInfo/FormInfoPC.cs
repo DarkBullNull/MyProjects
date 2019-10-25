@@ -13,8 +13,8 @@ namespace CommonInfo
 
         private void FormInfoPC_Load(object sender, EventArgs e)
         {
-            string releaseId = Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "ReleaseId", "").ToString(); // ~1809 version windows
             var infoPC = new PCInformation();
+            string releaseId = Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "ReleaseId", "").ToString(); // ~1809 version windows
             label_totalRam.Text = "TotalRAM: " + infoPC.totalRAMGlobal + " Mb";
             label_useRam.Text = "UseRAM: " + infoPC.useRAMGlobal + " Mb" + " (" + infoPC.percentUseRAMGlobal + "%)";
             label_captionWin.Text = infoPC.captionWindowsGlobal + " (" + infoPC.OSArchitectureGlobal + ")" + " | Version: " + releaseId + " | Build(" + infoPC.versionGlobal + ")";

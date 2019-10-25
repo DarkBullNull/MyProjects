@@ -53,6 +53,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Encoding.cs" />
+    <Compile Include="FileHelper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FileHelper.Designer.cs">
+      <DependentUpon>FileHelper.cs</DependentUpon>
+    </Compile>
     <Compile Include="FileInformation.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -69,6 +75,9 @@
     <Compile Include="PCInformation.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FileHelper.resx">
+      <DependentUpon>FileHelper.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormInfoPC.resx">
       <DependentUpon>FormInfoPC.cs</DependentUpon>
     </EmbeddedResource>

@@ -13,6 +13,7 @@ namespace CommonInfo
     public partial class MainForm : Form
     {
         FormInfoPC F_InfoPC = new FormInfoPC();
+        FormFileHelper F_FileHelper = new FormFileHelper();
         public MainForm()
         {
             InitializeComponent();
@@ -21,6 +22,12 @@ namespace CommonInfo
         private void btn_exit_Click(object sender, EventArgs e)
         {
             Environment.Exit(1);
+        }
+
+        private void btn_FileHelperShow_Click(object sender, EventArgs e)
+        {
+            base.Hide();
+            F_FileHelper.Show();
         }
 
         private void btn_openInfo_Click(object sender, EventArgs e)
