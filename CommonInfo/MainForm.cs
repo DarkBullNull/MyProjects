@@ -14,6 +14,7 @@ namespace CommonInfo
     {
         FormInfoPC F_InfoPC = new FormInfoPC();
         FormFileHelper F_FileHelper = new FormFileHelper();
+        AllProcess F_AllProcess = new AllProcess();
         public MainForm()
         {
             InitializeComponent();
@@ -34,6 +35,12 @@ namespace CommonInfo
         {
             base.Hide();
             F_InfoPC.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            base.Hide();
+            F_AllProcess.Show();
         }
     }
 }

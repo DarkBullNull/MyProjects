@@ -52,6 +52,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AllProcess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AllProcess.Designer.cs">
+      <DependentUpon>AllProcess.cs</DependentUpon>
+    </Compile>
     <Compile Include="Encoding.cs" />
     <Compile Include="FileHelper.cs">
       <SubType>Form</SubType>
@@ -75,6 +81,9 @@
     <Compile Include="PCInformation.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AllProcess.resx">
+      <DependentUpon>AllProcess.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FileHelper.resx">
       <DependentUpon>FileHelper.cs</DependentUpon>
     </EmbeddedResource>
