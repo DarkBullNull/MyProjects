@@ -28,21 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.SuspendLayout();
             // 
             // listBox1
             // 
             this.listBox1.BackColor = System.Drawing.Color.Black;
+            this.listBox1.ContextMenuStrip = this.contextMenuStrip1;
             this.listBox1.ForeColor = System.Drawing.Color.Cyan;
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.listBox1.Location = new System.Drawing.Point(12, 42);
+            this.listBox1.Location = new System.Drawing.Point(55, 51);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(360, 212);
             this.listBox1.Sorted = true;
             this.listBox1.TabIndex = 0;
-            this.listBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.listBox1_MouseUp);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // AllProcess
             // 
@@ -55,7 +62,6 @@
             this.Name = "AllProcess";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AllProcess";
-            this.Load += new System.EventHandler(this.AllProcess_Load);
             this.ResumeLayout(false);
 
         }
@@ -63,5 +69,6 @@
         #endregion
 
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }

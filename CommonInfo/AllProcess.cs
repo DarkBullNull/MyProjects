@@ -1,48 +1,47 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CommonInfo
 {
     public partial class AllProcess : Form
     {
+        Process[] procList = Process.GetProcesses();
         public AllProcess()
         {
             InitializeComponent();
-            MenuIndexListBox();
+            refreshListProcess();
+            ToolStripMenuItem terminateMenuItem = new ToolStripMenuItem("Terminate");
+            ToolStripMenuItem propertiesMenuItem = new ToolStripMenuItem("Properties");
+            contextMenuStrip1.Items.AddRange(new[] { terminateMenuItem, propertiesMenuItem });
+            listBox1.ContextMenuStrip = contextMenuStrip1;
+            terminateMenuItem.Click += terminateMenuItem_Click;
+            propertiesMenuItem.Click += propertiesMenuItem_Click;
         }
         
-        private void AllProcess_Load(object sender, EventArgs e)
+
+        void terminateMenuItem_Click(object sender, EventArgs e)
         {
-            Process[] procList = Process.GetProcesses();
+            procList[listBox1.SelectedIndex].Kill();
+        }
+        void propertiesMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        async void refreshListProcess()
+        {
+        Refresh:
+            listBox1.Items.Clear();
             for (int i = 0; i < procList.Length; i++)
             {
                 listBox1.Items.Add(procList[i].ToString().Substring(28).Replace(")", string.Empty));
-            }
-        }
-        private void MenuIndexListBox()
-        {
-            foreach (object k in listBox1.Items)
-            {
-                listBox1.ContextMenu.MenuItems.Add("test");
-            }
-        }
 
-        private void listBox1_MouseUp(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Right)
-            {
-                MenuItem[] menuItems = new MenuItem[]{new MenuItem("Some Button Info"),
-                    new MenuItem("Some Other Button Info"), new MenuItem("Exit")};
-
-                ContextMenu buttonMenu = new ContextMenu(menuItems);
-                buttonMenu.Show(listBox1, new System.Drawing.Point(e.X, e.Y));
-                if (e.Button == MouseButtons.Left)
-                {
-                    //CODE
-                }
             }
+            await Task.Delay(1000);
+            goto Refresh;
         }
     }
 }
