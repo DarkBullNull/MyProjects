@@ -29,35 +29,49 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.processListBox = new System.Windows.Forms.ListBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.btn_RefreshList = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // listBox1
+            // processListBox
             // 
-            this.listBox1.BackColor = System.Drawing.Color.Black;
-            this.listBox1.ContextMenuStrip = this.contextMenuStrip1;
-            this.listBox1.ForeColor = System.Drawing.Color.Cyan;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.listBox1.Location = new System.Drawing.Point(55, 51);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(360, 212);
-            this.listBox1.Sorted = true;
-            this.listBox1.TabIndex = 0;
+            this.processListBox.BackColor = System.Drawing.Color.Black;
+            this.processListBox.ContextMenuStrip = this.contextMenuStrip1;
+            this.processListBox.ForeColor = System.Drawing.Color.Cyan;
+            this.processListBox.FormattingEnabled = true;
+            this.processListBox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.processListBox.Location = new System.Drawing.Point(12, 12);
+            this.processListBox.Name = "processListBox";
+            this.processListBox.Size = new System.Drawing.Size(295, 160);
+            this.processListBox.Sorted = true;
+            this.processListBox.TabIndex = 0;
             // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // btn_RefreshList
+            // 
+            this.btn_RefreshList.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btn_RefreshList.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn_RefreshList.Location = new System.Drawing.Point(12, 178);
+            this.btn_RefreshList.Name = "btn_RefreshList";
+            this.btn_RefreshList.Size = new System.Drawing.Size(83, 23);
+            this.btn_RefreshList.TabIndex = 3;
+            this.btn_RefreshList.Text = "Refresh list";
+            this.btn_RefreshList.UseVisualStyleBackColor = false;
+            this.btn_RefreshList.Click += new System.EventHandler(this.btn_RefreshList_Click);
+            // 
             // AllProcess
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(502, 330);
-            this.Controls.Add(this.listBox1);
+            this.ClientSize = new System.Drawing.Size(319, 212);
+            this.Controls.Add(this.btn_RefreshList);
+            this.Controls.Add(this.processListBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AllProcess";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -68,7 +82,8 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox processListBox;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.Button btn_RefreshList;
     }
 }
