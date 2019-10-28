@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_exitFormPCInfo = new System.Windows.Forms.Button();
             this.btn_OpenFile = new System.Windows.Forms.Button();
             this.label_extension = new System.Windows.Forms.Label();
             this.label_path = new System.Windows.Forms.Label();
@@ -37,29 +36,18 @@
             this.label_lastWriteTime = new System.Windows.Forms.Label();
             this.label_size = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label_sha1 = new System.Windows.Forms.Label();
-            this.label_sha256 = new System.Windows.Forms.Label();
             this.label_md5 = new System.Windows.Forms.Label();
+            this.label_sha256 = new System.Windows.Forms.Label();
+            this.label_sha1 = new System.Windows.Forms.Label();
+            this.btn_FormInfoPC_back = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btn_exitFormPCInfo
-            // 
-            this.btn_exitFormPCInfo.BackColor = System.Drawing.Color.BlanchedAlmond;
-            this.btn_exitFormPCInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn_exitFormPCInfo.Location = new System.Drawing.Point(-10, 263);
-            this.btn_exitFormPCInfo.Name = "btn_exitFormPCInfo";
-            this.btn_exitFormPCInfo.Size = new System.Drawing.Size(573, 26);
-            this.btn_exitFormPCInfo.TabIndex = 7;
-            this.btn_exitFormPCInfo.Text = "Back";
-            this.btn_exitFormPCInfo.UseVisualStyleBackColor = false;
-            this.btn_exitFormPCInfo.Click += new System.EventHandler(this.btn_exitFormPCInfo_Click);
             // 
             // btn_OpenFile
             // 
             this.btn_OpenFile.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.btn_OpenFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn_OpenFile.Location = new System.Drawing.Point(229, 7);
+            this.btn_OpenFile.Location = new System.Drawing.Point(8, 6);
             this.btn_OpenFile.Name = "btn_OpenFile";
             this.btn_OpenFile.Size = new System.Drawing.Size(98, 27);
             this.btn_OpenFile.TabIndex = 8;
@@ -152,16 +140,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "File Info";
             // 
-            // label_sha1
+            // label_md5
             // 
-            this.label_sha1.AutoSize = true;
-            this.label_sha1.BackColor = System.Drawing.Color.Black;
-            this.label_sha1.ForeColor = System.Drawing.Color.Cyan;
-            this.label_sha1.Location = new System.Drawing.Point(7, 150);
-            this.label_sha1.Name = "label_sha1";
-            this.label_sha1.Size = new System.Drawing.Size(38, 13);
-            this.label_sha1.TabIndex = 15;
-            this.label_sha1.Text = "SHA-1";
+            this.label_md5.AutoSize = true;
+            this.label_md5.BackColor = System.Drawing.Color.Black;
+            this.label_md5.ForeColor = System.Drawing.Color.Cyan;
+            this.label_md5.Location = new System.Drawing.Point(7, 191);
+            this.label_md5.Name = "label_md5";
+            this.label_md5.Size = new System.Drawing.Size(30, 13);
+            this.label_md5.TabIndex = 17;
+            this.label_md5.Text = "MD5";
             // 
             // label_sha256
             // 
@@ -174,25 +162,37 @@
             this.label_sha256.TabIndex = 16;
             this.label_sha256.Text = "SHA_256";
             // 
-            // label_md5
+            // label_sha1
             // 
-            this.label_md5.AutoSize = true;
-            this.label_md5.BackColor = System.Drawing.Color.Black;
-            this.label_md5.ForeColor = System.Drawing.Color.Cyan;
-            this.label_md5.Location = new System.Drawing.Point(7, 191);
-            this.label_md5.Name = "label_md5";
-            this.label_md5.Size = new System.Drawing.Size(30, 13);
-            this.label_md5.TabIndex = 17;
-            this.label_md5.Text = "MD5";
+            this.label_sha1.AutoSize = true;
+            this.label_sha1.BackColor = System.Drawing.Color.Black;
+            this.label_sha1.ForeColor = System.Drawing.Color.Cyan;
+            this.label_sha1.Location = new System.Drawing.Point(7, 150);
+            this.label_sha1.Name = "label_sha1";
+            this.label_sha1.Size = new System.Drawing.Size(38, 13);
+            this.label_sha1.TabIndex = 15;
+            this.label_sha1.Text = "SHA-1";
+            // 
+            // btn_FormInfoPC_back
+            // 
+            this.btn_FormInfoPC_back.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.btn_FormInfoPC_back.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btn_FormInfoPC_back.Location = new System.Drawing.Point(116, 6);
+            this.btn_FormInfoPC_back.Name = "btn_FormInfoPC_back";
+            this.btn_FormInfoPC_back.Size = new System.Drawing.Size(98, 27);
+            this.btn_FormInfoPC_back.TabIndex = 16;
+            this.btn_FormInfoPC_back.Text = "Back";
+            this.btn_FormInfoPC_back.UseVisualStyleBackColor = false;
+            this.btn_FormInfoPC_back.Click += new System.EventHandler(this.btn_FormInfoPC_back_Click);
             // 
             // FormFileHelper
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(559, 41);
+            this.ClientSize = new System.Drawing.Size(223, 41);
+            this.Controls.Add(this.btn_FormInfoPC_back);
             this.Controls.Add(this.btn_OpenFile);
-            this.Controls.Add(this.btn_exitFormPCInfo);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormFileHelper";
@@ -205,8 +205,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btn_exitFormPCInfo;
         private System.Windows.Forms.Button btn_OpenFile;
         private System.Windows.Forms.Label label_extension;
         private System.Windows.Forms.Label label_path;
@@ -218,5 +216,6 @@
         private System.Windows.Forms.Label label_md5;
         private System.Windows.Forms.Label label_sha256;
         private System.Windows.Forms.Label label_sha1;
+        private System.Windows.Forms.Button btn_FormInfoPC_back;
     }
 }

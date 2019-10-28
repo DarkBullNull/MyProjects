@@ -30,7 +30,6 @@ namespace CommonInfo
         public string captionMotherBoardGlobal { get; private set; }
         public string companyMotherBoardGlobal { get; private set; }
         public string captionVideoAdapterGlobal { get; private set; }
-        public string testProcess { get; private set; }
 
         private void WorkWithOperatingSystem()
         {
@@ -90,35 +89,6 @@ namespace CommonInfo
             {
                 
                 captionVideoAdapterGlobal = (obj["Caption"]).ToString(); // название видеокарты
-            }
-        }
-
-        public static void TerminateProcess(int Handle)
-        {
-            try
-            {
-                ManagementObject classInstance =
-                    new ManagementObject("root\\CIMV2",
-                    $"Win32_Process.Handle=\'{Handle}\'",
-                    null);
-
-                // Obtain in-parameters for the method
-                ManagementBaseObject inParams =
-                    classInstance.GetMethodParameters("Terminate"); // ТУТ НЕ НАХОДИТ ТАКОЙ МЕТОД
-
-                // Add the input parameters.
-
-                // Execute the method and obtain the return values.
-                ManagementBaseObject outParams =
-                    classInstance.InvokeMethod("Terminate", inParams, null);
-
-                // List outParams
-                Console.WriteLine("Out parameters:");
-                Console.WriteLine("ReturnValue: " + outParams["ReturnValue"]);
-            }
-            catch (ManagementException err)
-            {
-                MessageBox.Show("An error occurred while trying to execute the WMI method: " + err.Message);
             }
         }
     }

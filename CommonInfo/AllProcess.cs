@@ -1,63 +1,82 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CommonInfo
 {
     public partial class AllProcess : Form
     {
+
         /*-----------------------------*/
-        [DllImport("User32.dll")]
-        static extern int SetForegroundWindow(IntPtr hWnd);
-        public static int HandleProcess { get; private set; }
+        [DllImport("kernel32.dll", SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        private static extern bool TerminateProcess(IntPtr hProcess, uint uExitCode);
         /*-----------------------------*/
-        Process[] procList = Process.GetProcesses();
+        private static int HandleProcess { get; set; }
+        /*-----------------------------*/
         public AllProcess()
         {
             InitializeComponent();
             ToolStripMenuItem terminateMenuItem = new ToolStripMenuItem("Terminate");
             ToolStripMenuItem propertiesMenuItem = new ToolStripMenuItem("Properties");
-            contextMenuStrip1.Items.AddRange(new[] { terminateMenuItem, propertiesMenuItem });
-            processListBox.ContextMenuStrip = contextMenuStrip1;
+            contextMenuProcesses.Items.AddRange(new[] { terminateMenuItem, propertiesMenuItem });
+            processListBox.ContextMenuStrip = contextMenuProcesses;
             terminateMenuItem.Click += terminateMenuItem_Click;
             propertiesMenuItem.Click += propertiesMenuItem_Click;
         }
-        
 
         void terminateMenuItem_Click(object sender, EventArgs e)
         {
-            procList[processListBox.SelectedIndex].Kill();
-            
-        }
-        void propertiesMenuItem_Click(object sender, EventArgs e)
-        {
+            // procList[processListBox.SelectedIndex].Kill(); метод Kill
+            Process[] procList = Process.GetProcesses();
             foreach (Process pro in procList)
             {
                 if (pro.ProcessName == processListBox.SelectedItem.ToString())
-                try
                 {
-                    int hWnd = pro.Handle.ToInt32();
-                        PCInformation.TerminateProcess(hWnd);
-                    break;
-                }
-                catch
-                {
-
+                    try
+                    {
+                        IntPtr hWnd = pro.Handle;
+                        TerminateProcess(hWnd, 1);
+                        break;
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Error", "!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
         }
+        void propertiesMenuItem_Click(object sender, EventArgs e)
+        {
 
+        }
         private void btn_RefreshList_Click(object sender, EventArgs e)
         {
+            Process[] procList = Process.GetProcesses();
             processListBox.Items.Clear();
             for (int i = 0; i < procList.Length; i++)
             {
                 processListBox.Items.Add(procList[i].ToString().Substring(28).Replace(")", string.Empty));
             }
-            
+
+        }
+
+        private void btn_FormInfoPC_back_Click(object sender, EventArgs e)
+        {
+            var F_Main = new MainForm();
+            F_Main.Show();
+            this.Hide();
+        }
+
+        private void AllProcess_Load(object sender, EventArgs e)
+        {
+            Process[] procList = Process.GetProcesses();
+            label_countProcesses.Text += procList.Length;
+            for (int i = 0; i < procList.Length; i++)
+            {
+                processListBox.Items.Add(procList[i].ToString().Substring(28).Replace(")", string.Empty));
+            }
         }
     }
 }

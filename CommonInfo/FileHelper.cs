@@ -46,15 +46,22 @@ namespace CommonInfo
                     label_sha1.Text = "SHA-1: " + encoding.SHA1;
                     label_sha256.Text = "SHA-256: " + encoding.SHA256;
                     label_md5.Text = "MD5: " + encoding.MD5;
-                    this.Width = 559;
-                    this.Height = 289;
-                    
+                    this.Width = 560;
+                    this.Height = 260;
+
                 }
                 else
                 {
                     MessageBox.Show("File Path Empty!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void btn_FormInfoPC_back_Click(object sender, EventArgs e)
+        {
+            var F_Main = new MainForm();
+            F_Main.Show();
+            this.Hide();
         }
     }
 }

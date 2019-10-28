@@ -39,9 +39,9 @@
             // 
             this.btn_exit.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.btn_exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btn_exit.Location = new System.Drawing.Point(-1, 275);
+            this.btn_exit.Location = new System.Drawing.Point(-1, 270);
             this.btn_exit.Name = "btn_exit";
-            this.btn_exit.Size = new System.Drawing.Size(181, 23);
+            this.btn_exit.Size = new System.Drawing.Size(181, 28);
             this.btn_exit.TabIndex = 0;
             this.btn_exit.Text = "Exit";
             this.btn_exit.UseVisualStyleBackColor = false;
@@ -75,9 +75,9 @@
             // 
             this.button1.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(33, 32);
+            this.button1.Location = new System.Drawing.Point(2, 32);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(111, 23);
+            this.button1.Size = new System.Drawing.Size(174, 23);
             this.button1.TabIndex = 3;
             this.button1.Text = "ALL_PROCESS";
             this.button1.UseVisualStyleBackColor = false;
