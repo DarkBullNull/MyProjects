@@ -34,6 +34,7 @@
             this.btn_RefreshList = new System.Windows.Forms.Button();
             this.btn_FormInfoPC_back = new System.Windows.Forms.Button();
             this.label_countProcesses = new System.Windows.Forms.Label();
+            this.label_countProcessesNum = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // processListBox
@@ -89,12 +90,24 @@
             this.label_countProcesses.TabIndex = 18;
             this.label_countProcesses.Text = "Count processes: ";
             // 
+            // label_countProcessesNum
+            // 
+            this.label_countProcessesNum.AutoSize = true;
+            this.label_countProcessesNum.BackColor = System.Drawing.Color.Black;
+            this.label_countProcessesNum.ForeColor = System.Drawing.Color.Cyan;
+            this.label_countProcessesNum.Location = new System.Drawing.Point(189, 495);
+            this.label_countProcessesNum.Name = "label_countProcessesNum";
+            this.label_countProcessesNum.Size = new System.Drawing.Size(32, 13);
+            this.label_countProcessesNum.TabIndex = 19;
+            this.label_countProcessesNum.Text = "NUM";
+            // 
             // AllProcess
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(671, 525);
+            this.Controls.Add(this.label_countProcessesNum);
             this.Controls.Add(this.label_countProcesses);
             this.Controls.Add(this.btn_FormInfoPC_back);
             this.Controls.Add(this.btn_RefreshList);
@@ -116,5 +129,6 @@
         private System.Windows.Forms.Button btn_RefreshList;
         private System.Windows.Forms.Button btn_FormInfoPC_back;
         private System.Windows.Forms.Label label_countProcesses;
+        private System.Windows.Forms.Label label_countProcessesNum;
     }
 }

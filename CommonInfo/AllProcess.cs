@@ -46,6 +46,7 @@ namespace CommonInfo
                     }
                 }
             }
+            label_countProcessesNum.Text = procList.Length.ToString();
         }
         void propertiesMenuItem_Click(object sender, EventArgs e)
         {
@@ -54,6 +55,7 @@ namespace CommonInfo
         private void btn_RefreshList_Click(object sender, EventArgs e)
         {
             Process[] procList = Process.GetProcesses();
+            label_countProcessesNum.Text = procList.Length.ToString();
             processListBox.Items.Clear();
             for (int i = 0; i < procList.Length; i++)
             {
@@ -72,7 +74,7 @@ namespace CommonInfo
         private void AllProcess_Load(object sender, EventArgs e)
         {
             Process[] procList = Process.GetProcesses();
-            label_countProcesses.Text += procList.Length;
+            label_countProcessesNum.Text = procList.Length.ToString();
             for (int i = 0; i < procList.Length; i++)
             {
                 processListBox.Items.Add(procList[i].ToString().Substring(28).Replace(")", string.Empty));
