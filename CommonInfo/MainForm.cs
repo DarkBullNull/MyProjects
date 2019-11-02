@@ -15,6 +15,7 @@ namespace CommonInfo
         FormInfoPC F_InfoPC = new FormInfoPC();
         FormFileHelper F_FileHelper = new FormFileHelper();
         AllProcess F_AllProcess = new AllProcess();
+        ActivityPCGraph F_Activity = new ActivityPCGraph();
         public MainForm()
         {
             InitializeComponent();
@@ -41,6 +42,12 @@ namespace CommonInfo
         {
             base.Hide();
             F_AllProcess.Show();
+        }
+
+        private void button_ActivityPC_Click(object sender, EventArgs e)
+        {
+            base.Hide();
+            F_Activity.Show();
         }
     }
 }
