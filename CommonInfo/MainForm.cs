@@ -54,5 +54,15 @@ namespace CommonInfo
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(
+                "I want to say thank you https://github.com/falahati for providing a library that works with NVAPI. I couldn't have done it without him.",
+                "Thanks, falahati",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information
+                );
+        }
     }
 }

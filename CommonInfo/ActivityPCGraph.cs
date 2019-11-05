@@ -1,6 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
+using System.Reflection;
 using System.Windows.Forms;
+using NvAPIWrapper;
+using NvAPIWrapper.Display;
+using NvAPIWrapper.GPU;
+using NvAPIWrapper.Mosaic;
+using NvAPIWrapper.Native;
 
 namespace CommonInfo
 {
@@ -12,11 +20,7 @@ namespace CommonInfo
             InitializeComponent();
         }
 
-        private void ActivityPCGraph_Load(object sender, EventArgs e)
-        {
-            //PerformanceCounter ramCounter = new PerformanceCounter("Memory", "Available MBytes");
-            //label1.Text = (ramCounter.NextValue().ToString() + "Mb");
-        }
+        
         public string CPU_TIME()
         {
             return Math.Round(perform.NextValue(), 0) + "%";
@@ -31,9 +35,21 @@ namespace CommonInfo
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            label1.Text = "Cpu Time: " + CPU_TIME();
+            label_percentProcUse.Text = "Cpu Time: " + CPU_TIME();
             
         }
-        
+
+        private void ActivityPCGraph_Load(object sender, EventArgs e)
+        {
+            object[] o = PhysicalGPU.GetPhysicalGPUs();
+            //int lengthO = o.Length - 1;
+            //richTextBox1.Text = o[lengthO].ToString();
+            //richTextBox1.Text = o[0].GetType().GetProperties().ToString();
+
+            foreach (var p in o[0].GetType().GetProperties().Where(p => !p.GetGetMethod().GetParameters().Any()))
+            {
+                richTextBox1.Text += p.GetValue(o[0]) + "\n";
+            }
+        }
     }
 }
