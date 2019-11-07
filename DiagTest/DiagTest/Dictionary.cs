@@ -32,6 +32,7 @@ namespace DiagTest
             { ImagesQ.Img19, "6" },
             { ImagesQ.Img20, "2" }
         };
+
         
     }
 }

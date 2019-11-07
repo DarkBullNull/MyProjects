@@ -13,29 +13,30 @@ namespace DiagTest
         {
             Assignment();
         }
-        public KeyValuePair<Image, string> Random0 { get; private set; }
-        public KeyValuePair<Image, string> Random1 { get; private set; }
-        public KeyValuePair<Image, string> Random2 { get; private set; }
-        public KeyValuePair<Image, string> Random3 { get; private set; }
-        public KeyValuePair<Image, string> Random4 { get; private set; }
+        public KeyValuePair<Image, string>[] Randomnie = new KeyValuePair<Image, string>[6];
         void Assignment()
         {
-            
-            Random rnd0 = new Random();
-            Random0 = Dictionary.diag.ElementAt(rnd0.Next(Dictionary.diag.Count));
-            Task.Delay(1000);
+            /*Random rnd0 = new Random();
+            Randomnie[0] = Dictionary.diag.ElementAt(rnd0.Next(Dictionary.diag.Count));
+            await Task.Delay(500);
             Random rnd1 = new Random();
-            Random1 = Dictionary.diag.ElementAt(rnd1.Next(Dictionary.diag.Count));
-            Task.Delay(1000);
+            Randomnie[1] = Dictionary.diag.ElementAt(rnd1.Next(Dictionary.diag.Count));
+            await Task.Delay(500);
             Random rnd2 = new Random();
-            Random2 = Dictionary.diag.ElementAt(rnd2.Next(Dictionary.diag.Count));
-            Task.Delay(1000);
+            Randomnie[2] = Dictionary.diag.ElementAt(rnd2.Next(Dictionary.diag.Count));
+            await Task.Delay(500);
             Random rnd3 = new Random();
-            Random3 = Dictionary.diag.ElementAt(rnd3.Next(Dictionary.diag.Count));
-            Task.Delay(1000);
+            Randomnie[3] = Dictionary.diag.ElementAt(rnd3.Next(Dictionary.diag.Count));
+            await Task.Delay(500);
             Random rnd4 = new Random();
-            Random4 = Dictionary.diag.ElementAt(rnd4.Next(Dictionary.diag.Count));
+            Randomnie[4] = Dictionary.diag.ElementAt(rnd4.Next(Dictionary.diag.Count));
+            var test = Randomnie.Distinct();
+            */
+            Stack<int> rnd = new RandomNotRepeat(0, 20).list;
+            for (int i = 0; i <= 5; i++)
+            {
+                Randomnie[i] = Dictionary.diag.ElementAt(rnd.ToArray()[i]);
+            }
         }
-
     }
 }
