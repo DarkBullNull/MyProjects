@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
+using System.Text;
 using System.Windows.Forms;
 using NvAPIWrapper;
 using NvAPIWrapper.Display;
@@ -14,10 +16,14 @@ namespace CommonInfo
 {
     public partial class ActivityPCGraph : Form
     {
-        PerformanceCounter perform = new PerformanceCounter("Processor", "% Processor Time", "_Total");
+        private readonly StringBuilder sb = new StringBuilder();
+        private readonly object[] GPU_Info = PhysicalGPU.GetPhysicalGPUs();
+        readonly PCInformation infoPC = new PCInformation();
+        readonly PerformanceCounter perform = new PerformanceCounter("Processor", "% Processor Time", "_Total");
         public ActivityPCGraph()
         {
             InitializeComponent();
+           
         }
 
         
@@ -41,15 +47,20 @@ namespace CommonInfo
 
         private void ActivityPCGraph_Load(object sender, EventArgs e)
         {
-            object[] o = PhysicalGPU.GetPhysicalGPUs();
-            //int lengthO = o.Length - 1;
-            //richTextBox1.Text = o[lengthO].ToString();
-            //richTextBox1.Text = o[0].GetType().GetProperties().ToString();
-
-            foreach (var p in o[0].GetType().GetProperties().Where(p => !p.GetGetMethod().GetParameters().Any()))
+            if (infoPC.captionVideoAdapterGlobal.Contains("NVIDIA"))
             {
-                richTextBox1.Text += p.GetValue(o[0]) + "\n";
+                sb.Append((GPU_Info[0].GetType().GetProperty("FullName").GetValue(GPU_Info[0], null)) + "\n");
+                sb.Append((GPU_Info[0].GetType().GetProperty("Board").GetValue(GPU_Info[0], null)) + "\n");
+                MessageBox.Show(sb.ToString());
             }
+            else
+            {
+                MessageBox.Show("///Work only NVIDIA-family///", "Err0R");
+            }
+        }
+        public static object GetPropValue(object src, string propName)
+        {
+            return src.GetType().GetProperty(propName).GetValue(src, null);
         }
     }
 }

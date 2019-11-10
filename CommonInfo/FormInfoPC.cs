@@ -1,11 +1,15 @@
 ﻿using System;
 using Microsoft.Win32;
 using System.Windows.Forms;
+using NvAPIWrapper.GPU;
+using System.Text;
 
 namespace CommonInfo
 {
     public partial class FormInfoPC : Form
     {
+        private readonly StringBuilder sb = new StringBuilder();
+        private readonly object[] GPU_Info = PhysicalGPU.GetPhysicalGPUs();
         public FormInfoPC()
         {
             InitializeComponent();
@@ -29,6 +33,23 @@ namespace CommonInfo
             label_captionMotherBoard.Text = "Model: " + infoPC.captionMotherBoardGlobal;
             label_companyMotherBoard.Text = infoPC.companyMotherBoardGlobal;
             label_captionVideoCard.Text = infoPC.captionVideoAdapterGlobal;
+            if (infoPC.captionVideoAdapterGlobal.Contains("NVIDIA"))
+            {
+                object[] a = { 1 };
+                label_CoolerInforamtion.Text = GPU_Info[0].GetType().GetProperty("CoolerInformation").GetValue(GPU_Info[0], null) + "\n";
+                label_BusInfromation.Text = GPU_Info[0].GetType().GetProperty("BusInformation").GetValue(GPU_Info[0], null) + "\n";
+                label_MemoryInformation.Text = GPU_Info[0]
+                    .GetType()
+                    .GetProperty("MemoryInformation")
+                    .GetType()
+                    .GetProperty("AvailableDedicatedVideoMemoryInkB")
+                    .GetValue(GPU_Info[0], null)
+                    + "\n";
+            }
+            else
+            {
+                MessageBox.Show("///Work only NVIDIA-family///", "Err0R");
+            }
         }
 
         private void btn_exitFormPCInfo_Click(object sender, EventArgs e)

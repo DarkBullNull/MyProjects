@@ -9,9 +9,9 @@ namespace CommonInfo
         public Encoding(string path)
         {
             this.Path = path;
-            ComputeSHA1Checksum(Path);
-            ComputeSHA256Checksum(Path);
-            ComputeMD5Checksum(Path);
+            ComputeSHA1Checksum();
+            ComputeSHA256Checksum();
+            ComputeMD5Checksum();
         }
         public string SHA1 { get; private set; }
         public string SHA256 { get; private set; }
@@ -37,7 +37,7 @@ namespace CommonInfo
         }
 
 
-        void ComputeSHA1Checksum(string Path)
+        void ComputeSHA1Checksum()
         {
             using (SHA1 sha1 = new SHA1CryptoServiceProvider())
             {
@@ -45,7 +45,7 @@ namespace CommonInfo
                 SHA1 = BitConverter.ToString(checkSum).Replace("-", String.Empty).ToLower();
             }
         }
-        void ComputeSHA256Checksum(string Path)
+        void ComputeSHA256Checksum()
         {
             using (SHA256 sha256 = new SHA256CryptoServiceProvider())
             {
@@ -54,7 +54,7 @@ namespace CommonInfo
             }
         }
 
-        void ComputeMD5Checksum(string Path)
+        void ComputeMD5Checksum()
         {
             using (MD5 md5 = new MD5CryptoServiceProvider())
             {
