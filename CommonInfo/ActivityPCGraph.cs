@@ -45,22 +45,12 @@ namespace CommonInfo
             
         }
 
-        private void ActivityPCGraph_Load(object sender, EventArgs e)
-        {
-            if (infoPC.captionVideoAdapterGlobal.Contains("NVIDIA"))
-            {
-                sb.Append((GPU_Info[0].GetType().GetProperty("FullName").GetValue(GPU_Info[0], null)) + "\n");
-                sb.Append((GPU_Info[0].GetType().GetProperty("Board").GetValue(GPU_Info[0], null)) + "\n");
-                MessageBox.Show(sb.ToString());
-            }
-            else
-            {
-                MessageBox.Show("///Work only NVIDIA-family///", "Err0R");
-            }
-        }
+       
         public static object GetPropValue(object src, string propName)
         {
             return src.GetType().GetProperty(propName).GetValue(src, null);
         }
+
+       
     }
 }

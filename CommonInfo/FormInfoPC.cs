@@ -35,20 +35,39 @@ namespace CommonInfo
             label_captionVideoCard.Text = infoPC.captionVideoAdapterGlobal;
             if (infoPC.captionVideoAdapterGlobal.Contains("NVIDIA"))
             {
-                object[] a = { 1 };
-                label_CoolerInforamtion.Text = GPU_Info[0].GetType().GetProperty("CoolerInformation").GetValue(GPU_Info[0], null) + "\n";
-                label_BusInfromation.Text = GPU_Info[0].GetType().GetProperty("BusInformation").GetValue(GPU_Info[0], null) + "\n";
-                label_MemoryInformation.Text = GPU_Info[0]
-                    .GetType()
-                    .GetProperty("MemoryInformation")
+                var MemoryInformation = GPU_Info[0].GetType().GetProperty("MemoryInformation").GetValue(GPU_Info[0]);
+                label_CoolerInforamtion.Text = "Cooler: " + GPU_Info[0].GetType().GetProperty("CoolerInformation").GetValue(GPU_Info[0]) + "\n";
+                label_BusInfromation.Text = GPU_Info[0].GetType().GetProperty("BusInformation").GetValue(GPU_Info[0]) + "\n";
+                label_MemoryInformation.Text = "Memory: " + "~" +
+                    (Convert.ToDouble(
+                    MemoryInformation
                     .GetType()
                     .GetProperty("AvailableDedicatedVideoMemoryInkB")
-                    .GetValue(GPU_Info[0], null)
-                    + "\n";
+                    .GetValue(MemoryInformation))
+                    /1024)
+                    .ToString()
+                    + " Mb";
+                label_RAMMake.Text = "RAM Maker: " + 
+                    (
+                    MemoryInformation
+                    .GetType()
+                    .GetProperty("RAMMaker")
+                    .GetValue(MemoryInformation)
+                    )
+                    .ToString();
+                label_RAMType.Text = "RAM Type: " +
+                    (
+                    MemoryInformation
+                    .GetType()
+                    .GetProperty("RAMType")
+                    .GetValue(MemoryInformation)
+                    )
+                    .ToString();
+
             }
             else
             {
-                MessageBox.Show("///Work only NVIDIA-family///", "Err0R");
+                MessageBox.Show("///GPU-Info work only NVIDIA-family///", "Err0R");
             }
         }
 

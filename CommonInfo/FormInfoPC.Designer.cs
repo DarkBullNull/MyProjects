@@ -48,13 +48,12 @@
             this.label_captionMotherBoard = new System.Windows.Forms.Label();
             this.label_companyMotherBoard = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.label_captionVideoCard = new System.Windows.Forms.Label();
-            this.label_BusInfromation = new System.Windows.Forms.Label();
-            this.label_MemoryInformation = new System.Windows.Forms.Label();
-            this.label_CoolerInforamtion = new System.Windows.Forms.Label();
             this.label_RAMType = new System.Windows.Forms.Label();
             this.label_RAMMake = new System.Windows.Forms.Label();
-            this.label_BoardInformation = new System.Windows.Forms.Label();
+            this.label_MemoryInformation = new System.Windows.Forms.Label();
+            this.label_CoolerInforamtion = new System.Windows.Forms.Label();
+            this.label_BusInfromation = new System.Windows.Forms.Label();
+            this.label_captionVideoCard = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -277,7 +276,6 @@
             // groupBox6
             // 
             this.groupBox6.BackColor = System.Drawing.Color.Black;
-            this.groupBox6.Controls.Add(this.label_BoardInformation);
             this.groupBox6.Controls.Add(this.label_RAMType);
             this.groupBox6.Controls.Add(this.label_RAMMake);
             this.groupBox6.Controls.Add(this.label_MemoryInformation);
@@ -287,10 +285,65 @@
             this.groupBox6.ForeColor = System.Drawing.Color.Cyan;
             this.groupBox6.Location = new System.Drawing.Point(2, 3);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(224, 163);
+            this.groupBox6.Size = new System.Drawing.Size(224, 164);
             this.groupBox6.TabIndex = 9;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "GPU Info";
+            // 
+            // label_RAMType
+            // 
+            this.label_RAMType.AutoSize = true;
+            this.label_RAMType.BackColor = System.Drawing.Color.Black;
+            this.label_RAMType.ForeColor = System.Drawing.Color.Cyan;
+            this.label_RAMType.Location = new System.Drawing.Point(6, 71);
+            this.label_RAMType.Name = "label_RAMType";
+            this.label_RAMType.Size = new System.Drawing.Size(128, 13);
+            this.label_RAMType.TabIndex = 7;
+            this.label_RAMType.Text = "RAMTYPE_VIDEOCARD";
+            // 
+            // label_RAMMake
+            // 
+            this.label_RAMMake.AutoSize = true;
+            this.label_RAMMake.BackColor = System.Drawing.Color.Black;
+            this.label_RAMMake.ForeColor = System.Drawing.Color.Cyan;
+            this.label_RAMMake.Location = new System.Drawing.Point(6, 58);
+            this.label_RAMMake.Name = "label_RAMMake";
+            this.label_RAMMake.Size = new System.Drawing.Size(138, 13);
+            this.label_RAMMake.TabIndex = 6;
+            this.label_RAMMake.Text = "RAMMAKER_VIDEOCARD";
+            // 
+            // label_MemoryInformation
+            // 
+            this.label_MemoryInformation.AutoSize = true;
+            this.label_MemoryInformation.BackColor = System.Drawing.Color.Black;
+            this.label_MemoryInformation.ForeColor = System.Drawing.Color.Cyan;
+            this.label_MemoryInformation.Location = new System.Drawing.Point(6, 30);
+            this.label_MemoryInformation.Name = "label_MemoryInformation";
+            this.label_MemoryInformation.Size = new System.Drawing.Size(124, 13);
+            this.label_MemoryInformation.TabIndex = 5;
+            this.label_MemoryInformation.Text = "MEMORY_VIDEOCARD";
+            // 
+            // label_CoolerInforamtion
+            // 
+            this.label_CoolerInforamtion.AutoSize = true;
+            this.label_CoolerInforamtion.BackColor = System.Drawing.Color.Black;
+            this.label_CoolerInforamtion.ForeColor = System.Drawing.Color.Cyan;
+            this.label_CoolerInforamtion.Location = new System.Drawing.Point(6, 44);
+            this.label_CoolerInforamtion.Name = "label_CoolerInforamtion";
+            this.label_CoolerInforamtion.Size = new System.Drawing.Size(120, 13);
+            this.label_CoolerInforamtion.TabIndex = 4;
+            this.label_CoolerInforamtion.Text = "COOLER_VIDEOCARD";
+            // 
+            // label_BusInfromation
+            // 
+            this.label_BusInfromation.AutoSize = true;
+            this.label_BusInfromation.BackColor = System.Drawing.Color.Black;
+            this.label_BusInfromation.ForeColor = System.Drawing.Color.Cyan;
+            this.label_BusInfromation.Location = new System.Drawing.Point(6, 85);
+            this.label_BusInfromation.Name = "label_BusInfromation";
+            this.label_BusInfromation.Size = new System.Drawing.Size(173, 13);
+            this.label_BusInfromation.TabIndex = 3;
+            this.label_BusInfromation.Text = "BUSINFORMATION_VIDEOCARD";
             // 
             // label_captionVideoCard
             // 
@@ -302,72 +355,6 @@
             this.label_captionVideoCard.Size = new System.Drawing.Size(123, 13);
             this.label_captionVideoCard.TabIndex = 2;
             this.label_captionVideoCard.Text = "CAPTION_VIDEOCARD";
-            // 
-            // label_BusInfromation
-            // 
-            this.label_BusInfromation.AutoSize = true;
-            this.label_BusInfromation.BackColor = System.Drawing.Color.Black;
-            this.label_BusInfromation.ForeColor = System.Drawing.Color.Cyan;
-            this.label_BusInfromation.Location = new System.Drawing.Point(6, 30);
-            this.label_BusInfromation.Name = "label_BusInfromation";
-            this.label_BusInfromation.Size = new System.Drawing.Size(173, 13);
-            this.label_BusInfromation.TabIndex = 3;
-            this.label_BusInfromation.Text = "BUSINFORMATION_VIDEOCARD";
-            // 
-            // label_MemoryInformation
-            // 
-            this.label_MemoryInformation.AutoSize = true;
-            this.label_MemoryInformation.BackColor = System.Drawing.Color.Black;
-            this.label_MemoryInformation.ForeColor = System.Drawing.Color.Cyan;
-            this.label_MemoryInformation.Location = new System.Drawing.Point(6, 59);
-            this.label_MemoryInformation.Name = "label_MemoryInformation";
-            this.label_MemoryInformation.Size = new System.Drawing.Size(124, 13);
-            this.label_MemoryInformation.TabIndex = 5;
-            this.label_MemoryInformation.Text = "MEMORY_VIDEOCARD";
-            // 
-            // label_CoolerInforamtion
-            // 
-            this.label_CoolerInforamtion.AutoSize = true;
-            this.label_CoolerInforamtion.BackColor = System.Drawing.Color.Black;
-            this.label_CoolerInforamtion.ForeColor = System.Drawing.Color.Cyan;
-            this.label_CoolerInforamtion.Location = new System.Drawing.Point(6, 45);
-            this.label_CoolerInforamtion.Name = "label_CoolerInforamtion";
-            this.label_CoolerInforamtion.Size = new System.Drawing.Size(120, 13);
-            this.label_CoolerInforamtion.TabIndex = 4;
-            this.label_CoolerInforamtion.Text = "COOLER_VIDEOCARD";
-            // 
-            // label_RAMType
-            // 
-            this.label_RAMType.AutoSize = true;
-            this.label_RAMType.BackColor = System.Drawing.Color.Black;
-            this.label_RAMType.ForeColor = System.Drawing.Color.Cyan;
-            this.label_RAMType.Location = new System.Drawing.Point(6, 88);
-            this.label_RAMType.Name = "label_RAMType";
-            this.label_RAMType.Size = new System.Drawing.Size(128, 13);
-            this.label_RAMType.TabIndex = 7;
-            this.label_RAMType.Text = "RAMTYPE_VIDEOCARD";
-            // 
-            // label_RAMMake
-            // 
-            this.label_RAMMake.AutoSize = true;
-            this.label_RAMMake.BackColor = System.Drawing.Color.Black;
-            this.label_RAMMake.ForeColor = System.Drawing.Color.Cyan;
-            this.label_RAMMake.Location = new System.Drawing.Point(6, 74);
-            this.label_RAMMake.Name = "label_RAMMake";
-            this.label_RAMMake.Size = new System.Drawing.Size(138, 13);
-            this.label_RAMMake.TabIndex = 6;
-            this.label_RAMMake.Text = "RAMMAKER_VIDEOCARD";
-            // 
-            // label_BoardInformation
-            // 
-            this.label_BoardInformation.AutoSize = true;
-            this.label_BoardInformation.BackColor = System.Drawing.Color.Black;
-            this.label_BoardInformation.ForeColor = System.Drawing.Color.Cyan;
-            this.label_BoardInformation.Location = new System.Drawing.Point(6, 101);
-            this.label_BoardInformation.Name = "label_BoardInformation";
-            this.label_BoardInformation.Size = new System.Drawing.Size(152, 13);
-            this.label_BoardInformation.TabIndex = 8;
-            this.label_BoardInformation.Text = "BOARDSERIAL_VIDEOCARD";
             // 
             // FormInfoPC
             // 
@@ -433,6 +420,5 @@
         private System.Windows.Forms.Label label_RAMMake;
         private System.Windows.Forms.Label label_MemoryInformation;
         private System.Windows.Forms.Label label_CoolerInforamtion;
-        private System.Windows.Forms.Label label_BoardInformation;
     }
 }

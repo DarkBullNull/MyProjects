@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+using System.Diagnostics;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CommonInfo
@@ -16,9 +11,40 @@ namespace CommonInfo
         FormFileHelper F_FileHelper = new FormFileHelper();
         AllProcess F_AllProcess = new AllProcess();
         ActivityPCGraph F_Activity = new ActivityPCGraph();
+        readonly PerformanceCounter perform = new PerformanceCounter("Processor", "% Processor Time", "_Total");
         public MainForm()
         {
             InitializeComponent();
+            this.Load += (delegate
+            {
+                pictureBox1.BackColor = Color.White;
+                pictureBox1.BorderStyle = BorderStyle.FixedSingle;
+            });
+            button2.Click += (delegate
+            {
+                Point[] points = new Point[]
+                {
+                    new Point{X = pictureBox1.Width / 2, Y = 0},
+                };
+
+                Graphics graph = pictureBox1.CreateGraphics();
+                Pen pen = new Pen(new SolidBrush(Color.Cyan), 1.0F);
+
+                graph.DrawLine(pen, points[0], points[0]);
+                graph.DrawLine(pen, points[0], points[0]);
+
+                Pen pen2 = new Pen(new SolidBrush(Color.Red), 2.0F);
+
+                Point[] myPoints = new Point[]
+                {
+                    new Point(0,5),
+                    new Point(10,10),
+                    new Point(20,15),
+                    new Point(20,30)
+                };
+
+                graph.DrawLines(pen2, myPoints);
+            });
         }
 
         private void btn_exit_Click(object sender, EventArgs e)
@@ -50,14 +76,14 @@ namespace CommonInfo
             F_Activity.Show();
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
+        private void timer1_Tick(object sender, EventArgs e)
         {
-
+        }
+        private double CPU_TIME()
+        {
+            return Math.Round(perform.NextValue(), 0);
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            
-        }
+        
     }
 }
