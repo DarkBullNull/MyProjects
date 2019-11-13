@@ -36,9 +36,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button_ActivityPC = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.plot_CPU = new OxyPlot.WindowsForms.PlotView();
             this.SuspendLayout();
             // 
             // btn_exit
@@ -104,26 +102,21 @@
             // timer1
             // 
             this.timer1.Enabled = true;
-            this.timer1.Interval = 2000;
+            this.timer1.Interval = 3000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // pictureBox1
+            // plot_CPU
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.BlanchedAlmond;
-            this.pictureBox1.Location = new System.Drawing.Point(355, 156);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(265, 184);
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(448, 367);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.plot_CPU.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.plot_CPU.Location = new System.Drawing.Point(331, 157);
+            this.plot_CPU.Name = "plot_CPU";
+            this.plot_CPU.PanCursor = System.Windows.Forms.Cursors.Hand;
+            this.plot_CPU.Size = new System.Drawing.Size(279, 242);
+            this.plot_CPU.TabIndex = 5;
+            this.plot_CPU.Text = "plotView1";
+            this.plot_CPU.ZoomHorizontalCursor = System.Windows.Forms.Cursors.SizeWE;
+            this.plot_CPU.ZoomRectangleCursor = System.Windows.Forms.Cursors.SizeNWSE;
+            this.plot_CPU.ZoomVerticalCursor = System.Windows.Forms.Cursors.SizeNS;
             // 
             // MainForm
             // 
@@ -131,8 +124,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(681, 560);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.plot_CPU);
             this.Controls.Add(this.button_ActivityPC);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_FileHelperShow);
@@ -146,7 +138,6 @@
             this.Opacity = 0.8D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Poooof";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -158,9 +149,8 @@
         private System.Windows.Forms.Button btn_FileHelperShow;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button_ActivityPC;
-        private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button2;
+        private OxyPlot.WindowsForms.PlotView plot_CPU;
+        public System.Windows.Forms.Timer timer1;
     }
 }
 

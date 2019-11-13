@@ -51,6 +51,9 @@ namespace CommonInfo
             return src.GetType().GetProperty(propName).GetValue(src, null);
         }
 
-       
+        private void ActivityPCGraph_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

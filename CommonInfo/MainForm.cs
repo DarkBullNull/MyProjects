@@ -1,50 +1,32 @@
-﻿using System;
+﻿using OxyPlot;
+using OxyPlot.Axes;
+using OxyPlot.Series;
+using System;
 using System.Diagnostics;
 using System.Drawing;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CommonInfo
 {
+    
     public partial class MainForm : Form
     {
+        PerformanceCounter perform = new PerformanceCounter("Processor", "% Processor Time", "_Total");
+        
+        PlotModel myModel = new PlotModel { Title = "CPU Usage" };
         FormInfoPC F_InfoPC = new FormInfoPC();
         FormFileHelper F_FileHelper = new FormFileHelper();
         AllProcess F_AllProcess = new AllProcess();
         ActivityPCGraph F_Activity = new ActivityPCGraph();
-        readonly PerformanceCounter perform = new PerformanceCounter("Processor", "% Processor Time", "_Total");
+        
+        int i = 0;
+        int ValueCPU = 0;
         public MainForm()
         {
             InitializeComponent();
-            this.Load += (delegate
-            {
-                pictureBox1.BackColor = Color.White;
-                pictureBox1.BorderStyle = BorderStyle.FixedSingle;
-            });
-            button2.Click += (delegate
-            {
-                Point[] points = new Point[]
-                {
-                    new Point{X = pictureBox1.Width / 2, Y = 0},
-                };
-
-                Graphics graph = pictureBox1.CreateGraphics();
-                Pen pen = new Pen(new SolidBrush(Color.Cyan), 1.0F);
-
-                graph.DrawLine(pen, points[0], points[0]);
-                graph.DrawLine(pen, points[0], points[0]);
-
-                Pen pen2 = new Pen(new SolidBrush(Color.Red), 2.0F);
-
-                Point[] myPoints = new Point[]
-                {
-                    new Point(0,5),
-                    new Point(10,10),
-                    new Point(20,15),
-                    new Point(20,30)
-                };
-
-                graph.DrawLines(pen2, myPoints);
-            });
+            myModel.Axes.Add(new LinearAxis { Position = AxisPosition.Bottom, Minimum = 0, Maximum = 60 });
+            myModel.Axes.Add(new LinearAxis { Position = AxisPosition.Left, Minimum = 0, Maximum = 100 });
         }
 
         private void btn_exit_Click(object sender, EventArgs e)
@@ -78,10 +60,28 @@ namespace CommonInfo
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            this.plot_CPU.Model = myModel;
+            FunctionSeries fs = new FunctionSeries();
+            CPU_TIME();
+            if (i == 0)
+            {
+                Task.Delay(2000);
+                CPU_TIME();
+                fs.Points.Add(new DataPoint(0, 0));
+                fs.Points.Add(new DataPoint(++i, ValueCPU));
+            }
+            else
+            {
+                fs.Points.Add(new DataPoint(i, ValueCPU));
+                CPU_TIME();
+                ValueCPU = Convert.ToInt32(Math.Round(perform.NextValue(), 0));
+                fs.Points.Add(new DataPoint(++i, ValueCPU));
+            }
+            myModel.Series.Add(fs);
         }
-        private double CPU_TIME()
+        void CPU_TIME()
         {
-            return Math.Round(perform.NextValue(), 0);
+            ValueCPU = Convert.ToInt32(Math.Round(perform.NextValue(), 0));
         }
 
         
