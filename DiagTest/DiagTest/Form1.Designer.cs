@@ -60,7 +60,7 @@
             // 
             this.btn_ok.Location = new System.Drawing.Point(381, 27);
             this.btn_ok.Name = "btn_ok";
-            this.btn_ok.Size = new System.Drawing.Size(97, 20);
+            this.btn_ok.Size = new System.Drawing.Size(115, 21);
             this.btn_ok.TabIndex = 3;
             this.btn_ok.Text = "Ответить";
             this.btn_ok.UseVisualStyleBackColor = true;

@@ -17,14 +17,16 @@ namespace DiagTest
         public MainForm()
         {
             InitializeComponent();
-            AntiDump.Initialize();// CHECK THIS!!!
-            AntiDebugging();// CHECK THIS!!!
             mainImage.Image = cs.Randomnie[0].Key;
         }
         private void button1_Click(object sender, EventArgs e)
         {
             try
             {
+                if (i == 5)
+                {
+                    Environment.Exit(0);
+                }
                 ++i;
                 if (tb1_Input.Text == cs.Randomnie[i].Value)
                 {
@@ -75,12 +77,6 @@ namespace DiagTest
         {
             MessageBox.Show("Автор(tg): @dbsale", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-        public static async void AntiDebugging()
-        {
-        reCheck:
-            await Task.Delay(2000);
-            Scanner.ScanAndKill();
-            goto reCheck;
-        }
+        
     }
 }
