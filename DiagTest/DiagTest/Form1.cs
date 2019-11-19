@@ -11,9 +11,9 @@ namespace DiagTest
 {
     public partial class MainForm : Form
     {
-        CommonStruct cs = new CommonStruct();
-        int good = 0;
-        int i = 0;
+        readonly CommonStruct cs = new CommonStruct();
+        int good = 0; // кол-во хороших результатов
+        int i = 0; // счетчик до 5, чтобы легче было сравнивать результат
         public MainForm()
         {
             InitializeComponent();
@@ -25,9 +25,9 @@ namespace DiagTest
         {
             try
             {
+                ++i;
                 if (tb1_Input.Text == cs.Randomnie[i].Value)
                 {
-                    ++i;
                     ++good;
                     tb1_Input.Clear();
                     if (i == 5)
@@ -35,12 +35,12 @@ namespace DiagTest
                         MessageBox.Show("Оценка: " + good, "Завершение...", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Process.GetCurrentProcess().Kill();
                     }
+                    label_result.Text = "Баллов: " + good;
                     mainImage.Image = null;
                     mainImage.Image = cs.Randomnie[i].Key;
                 }
                 else
                 {
-                    ++i;
                     tb1_Input.Clear();
                     if (i == 5)
                     {

@@ -35,6 +35,7 @@
             this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutByToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mainImage = new System.Windows.Forms.PictureBox();
+            this.label_result = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mainImage)).BeginInit();
             this.SuspendLayout();
@@ -99,6 +100,15 @@
             this.mainImage.TabIndex = 1;
             this.mainImage.TabStop = false;
             // 
+            // label_result
+            // 
+            this.label_result.AutoSize = true;
+            this.label_result.Location = new System.Drawing.Point(577, 31);
+            this.label_result.Name = "label_result";
+            this.label_result.Size = new System.Drawing.Size(50, 13);
+            this.label_result.TabIndex = 5;
+            this.label_result.Text = "Баллов: ";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -106,6 +116,7 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Orange;
             this.ClientSize = new System.Drawing.Size(639, 258);
+            this.Controls.Add(this.label_result);
             this.Controls.Add(this.btn_ok);
             this.Controls.Add(this.label_info);
             this.Controls.Add(this.mainImage);
@@ -135,6 +146,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem infoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutByToolStripMenuItem;
+        private System.Windows.Forms.Label label_result;
     }
 }
 

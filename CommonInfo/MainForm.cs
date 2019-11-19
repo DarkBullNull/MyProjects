@@ -13,7 +13,7 @@ namespace CommonInfo
     public partial class MainForm : Form
     {
         PerformanceCounter perform = new PerformanceCounter("Processor", "% Processor Time", "_Total");
-        
+        int k = 0;
         PlotModel myModel = new PlotModel { Title = "CPU Usage" };
         FormInfoPC F_InfoPC = new FormInfoPC();
         FormFileHelper F_FileHelper = new FormFileHelper();
@@ -60,8 +60,9 @@ namespace CommonInfo
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            /*
             this.plot_CPU.Model = myModel;
-            FunctionSeries fs = new FunctionSeries();
+            FunctionSeries fs = new FunctionSeries();`
             CPU_TIME();
             if (i == 0)
             {
@@ -78,12 +79,22 @@ namespace CommonInfo
                 fs.Points.Add(new DataPoint(++i, ValueCPU));
             }
             myModel.Series.Add(fs);
+        */
         }
         void CPU_TIME()
         {
             ValueCPU = Convert.ToInt32(Math.Round(perform.NextValue(), 0));
         }
 
-        
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.plot_CPU.Model = myModel;
+            FunctionSeries fs = new FunctionSeries();
+            //++k;
+            fs.Points.Add(new DataPoint(0, 0));
+            fs.Points.Add(new DataPoint(++i, ++k));
+            myModel.Series.Add(fs);
+            fs.Unselect();
+        }
     }
 }
