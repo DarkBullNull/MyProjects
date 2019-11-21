@@ -23,26 +23,25 @@ namespace DiagTest
         {
             try
             {
-                if (i == 5)
-                {
-                    Environment.Exit(0);
-                }
-                ++i;
+                
                 if (tb1_Input.Text == cs.Randomnie[i].Value)
                 {
+                    ++i;
                     ++good;
+                    label_result.Text = "Баллов: " + good;
                     tb1_Input.Clear();
                     if (i == 5)
                     {
                         MessageBox.Show("Оценка: " + good, "Завершение...", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Process.GetCurrentProcess().Kill();
                     }
-                    label_result.Text = "Баллов: " + good;
+                    
                     mainImage.Image = null;
                     mainImage.Image = cs.Randomnie[i].Key;
                 }
                 else
                 {
+                    ++i;
                     tb1_Input.Clear();
                     if (i == 5)
                     {
