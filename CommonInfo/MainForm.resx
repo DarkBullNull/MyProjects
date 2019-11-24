@@ -121,6 +121,16 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="bunifuCheckBox1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADdSURBVHhe7dstDgIxEMXxkUgkoqVX4BhIJEdAIpHcoN0E
+        zxGRuA7tfpCw9ATT/yQva555v127ws0XnrrxKV981Lv95Gt46G6eXsZH3Zbxr31S7SVl77vsPowA9c23
+        SmYzTE+f9DYBlM/ir9RB6m4AAAAAAAAAAAAAAFoF6wEAAAAAAAAAAAAAAAAAAACgVbAeAAAAAAAAAAAA
+        AAAAAAAAAFoF6wEAAAAAAAAAAAAAAAAAAACgVbAeAAAAAIAfgLAqWM2y8wtQ/6Fdl3qIi3oaAeq5IR+r
+        SC9xKZ9FRD7pj+ad5nveEAAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAICAAAAAAIADaAwAAFgAAAIlQTkcNChoKAAAADUlIRFIAAAAgAAAAIAgGAAAAc3p69AAAAAFz

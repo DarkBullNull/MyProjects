@@ -96,5 +96,15 @@ namespace CommonInfo
             myModel.Series.Add(fs);
             fs.Unselect();
         }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuButton1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Test");
+        }
     }
 }
