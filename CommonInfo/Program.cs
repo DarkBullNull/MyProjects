@@ -17,6 +17,7 @@ namespace CommonInfo
         [STAThread]
         static void Main()
         {
+            /*
             WindowsPrincipal principal = new WindowsPrincipal(WindowsIdentity.GetCurrent());
             bool hasAdministrativeRight = principal.IsInRole(WindowsBuiltInRole.Administrator);
 
@@ -36,6 +37,15 @@ namespace CommonInfo
                 Application.Exit(); //закрываем текущую копию программы (в любом случае, даже если пользователь отменил запуск с правами администратора в окне UAC)
             }
             else //имеем права администратора, значит, стартуем
+                */
+            string path = Environment.CurrentDirectory;
+            ProcessStartInfo si = new ProcessStartInfo("cmd.exe");
+            si.Arguments = "/C explorer.exe " + path + "\\CommonInfo.exe";
+            si.WindowStyle = ProcessWindowStyle.Hidden;
+            Process.Start(si);
+
+
+
             {
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);

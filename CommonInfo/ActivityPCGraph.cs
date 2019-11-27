@@ -17,7 +17,6 @@ namespace CommonInfo
     public partial class ActivityPCGraph : Form
     {
         private readonly StringBuilder sb = new StringBuilder();
-        private readonly object[] GPU_Info = PhysicalGPU.GetPhysicalGPUs();
         readonly PCInformation infoPC = new PCInformation();
         readonly PerformanceCounter perform = new PerformanceCounter("Processor", "% Processor Time", "_Total");
         public ActivityPCGraph()

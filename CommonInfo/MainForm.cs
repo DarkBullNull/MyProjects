@@ -15,10 +15,9 @@ namespace CommonInfo
         PerformanceCounter perform = new PerformanceCounter("Processor", "% Processor Time", "_Total");
         int k = 0;
         PlotModel myModel = new PlotModel { Title = "CPU Usage" };
-        FormInfoPC F_InfoPC = new FormInfoPC();
         FormFileHelper F_FileHelper = new FormFileHelper();
         AllProcess F_AllProcess = new AllProcess();
-        ActivityPCGraph F_Activity = new ActivityPCGraph();
+        
         
         int i = 0;
         int ValueCPU = 0;
@@ -42,6 +41,7 @@ namespace CommonInfo
 
         private void btn_openInfo_Click(object sender, EventArgs e)
         {
+            FormInfoPC F_InfoPC = new FormInfoPC();
             base.Hide();
             F_InfoPC.Show();
         }
@@ -54,6 +54,7 @@ namespace CommonInfo
 
         private void button_ActivityPC_Click(object sender, EventArgs e)
         {
+            ActivityPCGraph F_Activity = new ActivityPCGraph();
             base.Hide();
             F_Activity.Show();
         }
