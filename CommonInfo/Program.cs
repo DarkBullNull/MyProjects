@@ -17,6 +17,7 @@ namespace CommonInfo
         [STAThread]
         static void Main()
         {
+            /*
             WindowsPrincipal principal = new WindowsPrincipal(WindowsIdentity.GetCurrent());
             bool hasAdministrativeRight = principal.IsInRole(WindowsBuiltInRole.Administrator);
 
@@ -36,6 +37,10 @@ namespace CommonInfo
                 Application.Exit(); //закрываем текущую копию программы (в любом случае, даже если пользователь отменил запуск с правами администратора в окне UAC)
             }
             else //имеем права администратора, значит, стартуем
+                */
+
+
+
             {
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);

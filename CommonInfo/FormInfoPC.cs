@@ -9,7 +9,8 @@ namespace CommonInfo
     public partial class FormInfoPC : Form
     {
         private readonly StringBuilder sb = new StringBuilder();
-        private readonly object[] GPU_Info = PhysicalGPU.GetPhysicalGPUs();
+
+        
         public FormInfoPC()
         {
             InitializeComponent();
@@ -35,6 +36,7 @@ namespace CommonInfo
             label_captionVideoCard.Text = infoPC.captionVideoAdapterGlobal;
             if (infoPC.captionVideoAdapterGlobal.Contains("NVIDIA"))
             {
+                object[] GPU_Info = PhysicalGPU.GetPhysicalGPUs();
                 var MemoryInformation = GPU_Info[0].GetType().GetProperty("MemoryInformation").GetValue(GPU_Info[0]);
                 label_CoolerInforamtion.Text = "Cooler: " + GPU_Info[0].GetType().GetProperty("CoolerInformation").GetValue(GPU_Info[0]) + "\n";
                 label_BusInfromation.Text = GPU_Info[0].GetType().GetProperty("BusInformation").GetValue(GPU_Info[0]) + "\n";
@@ -68,6 +70,8 @@ namespace CommonInfo
             else
             {
                 MessageBox.Show("///GPU-Info work only NVIDIA-family///", "Err0R");
+                MainForm mf = new MainForm();
+                mf.Show();
             }
         }
 

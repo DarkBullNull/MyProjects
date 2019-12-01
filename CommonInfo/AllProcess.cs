@@ -9,11 +9,8 @@ namespace CommonInfo
     {
 
         /*-----------------------------*/
-        [DllImport("kernel32.dll", SetLastError = true)]
-        [return: MarshalAs(UnmanagedType.Bool)]
-        private static extern bool TerminateProcess(IntPtr hProcess, uint uExitCode);
-        /*-----------------------------*/
-        private static int HandleProcess { get; set; }
+        [DllImport("winsta.dll", SetLastError = true)]
+        private static extern bool WinStationTerminateProcess(IntPtr hServer, ulong ProcessId, ulong ExitCode);
         /*-----------------------------*/
         public AllProcess()
         {
@@ -28,7 +25,6 @@ namespace CommonInfo
 
         void terminateMenuItem_Click(object sender, EventArgs e)
         {
-            // procList[processListBox.SelectedIndex].Kill(); метод Kill
             Process[] procList = Process.GetProcesses();
             foreach (Process pro in procList)
             {
@@ -36,8 +32,8 @@ namespace CommonInfo
                 {
                     try
                     {
-                        IntPtr hWnd = pro.Handle;
-                        TerminateProcess(hWnd, 1);
+                        ulong pId = (ulong)pro.Id;
+                        WinStationTerminateProcess(IntPtr.Zero, pId, 1);
                         break;
                     }
                     catch
