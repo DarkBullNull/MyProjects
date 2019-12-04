@@ -28,14 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.btn_exit = new System.Windows.Forms.Button();
             this.btn_openInfo = new System.Windows.Forms.Button();
             this.btn_FileHelperShow = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button_ActivityPC = new System.Windows.Forms.Button();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // btn_exit
@@ -98,18 +96,12 @@
             this.button_ActivityPC.UseVisualStyleBackColor = false;
             this.button_ActivityPC.Click += new System.EventHandler(this.button_ActivityPC_Click);
             // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 3000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(794, 524);
+            this.ClientSize = new System.Drawing.Size(179, 298);
             this.Controls.Add(this.button_ActivityPC);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_FileHelperShow);
@@ -123,7 +115,6 @@
             this.Opacity = 0.8D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Poooof";
-            this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
 
         }
@@ -135,7 +126,6 @@
         private System.Windows.Forms.Button btn_FileHelperShow;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button_ActivityPC;
-        public System.Windows.Forms.Timer timer1;
     }
 }
 

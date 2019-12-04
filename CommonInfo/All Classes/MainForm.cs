@@ -5,21 +5,20 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Reflection;
+using ConversionBack;
 
 namespace CommonInfo
 {
     
     public partial class MainForm : Form
     {
-        
-        //[DllImport("CppClassDll.dll", SetLastError = true, CharSet = CharSet.Auto, CallingConvention = CallingConvention.Cdecl)]
-        //public static extern double sumTwo(double var_x, double var_y);
         PerformanceCounter perform = new PerformanceCounter("Processor", "% Processor Time", "_Total");
         FormFileHelper F_FileHelper = new FormFileHelper();
         AllProcess F_AllProcess = new AllProcess();
         int ValueCPU = 0;
         public MainForm()
         {
+            Initialize.Initalize("CommonInfo.Assembly.dll");
             InitializeComponent();
         }
 
@@ -54,39 +53,10 @@ namespace CommonInfo
             F_Activity.Show();
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            /*
-            this.plot_CPU.Model = myModel;
-            FunctionSeries fs = new FunctionSeries();`
-            CPU_TIME();
-            if (i == 0)
-            {
-                Task.Delay(2000);
-                CPU_TIME();
-                fs.Points.Add(new DataPoint(0, 0));
-                fs.Points.Add(new DataPoint(++i, ValueCPU));
-            }
-            else
-            {
-                fs.Points.Add(new DataPoint(i, ValueCPU));
-                CPU_TIME();
-                ValueCPU = Convert.ToInt32(Math.Round(perform.NextValue(), 0));
-                fs.Points.Add(new DataPoint(++i, ValueCPU));
-            }
-            myModel.Series.Add(fs);
-        */
-        }
+        
         void CPU_TIME()
         {
             ValueCPU = Convert.ToInt32(Math.Round(perform.NextValue(), 0));
-        }
-
-        
-
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void bunifuButton1_Click(object sender, EventArgs e)

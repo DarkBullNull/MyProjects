@@ -48,6 +48,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>ico.ico</ApplicationIcon>
@@ -87,6 +88,11 @@
       <HintPath>packages\NvAPIWrapper.Net.0.7.0.57\lib\net45\NvAPIWrapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Runtime, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Desktop\Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
@@ -97,7 +103,6 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
@@ -181,6 +186,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="RT.dll" />
+    <EmbeddedResource Include="Module.dll" />
+    <EmbeddedResource Include="X86.dll" />
+    <EmbeddedResource Include="X64.dll" />
+    <EmbeddedResource Include="Assembly.dll" />
     <Content Include="ico.ico" />
   </ItemGroup>
   <ItemGroup>
@@ -189,9 +199,6 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

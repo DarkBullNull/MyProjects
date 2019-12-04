@@ -1,4 +1,5 @@
 ﻿
+using ConversionBack;
 using System;
 using System.Diagnostics;
 using System.IO;
@@ -38,42 +39,41 @@ namespace CommonInfo
             }
             else //имеем права администратора, значит, стартуем
                 */
-            setup();
-
             {
+                Setup();
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
                 Application.Run(new MainForm());
+                
             }
 
         }
-        public static void setup()
+        public static void Setup()
         {
-            /*
+            
             if (Debugger.IsAttached)
             {
-                Environment.Exit(0);
+                // Environment.Exit(0);
             }
             
-            using (Stream manifestResourceStream = Assembly.GetCallingAssembly().GetManifestResourceStream("RT"))
+            using (var stream = Assembly.GetCallingAssembly().GetManifestResourceStream("CommonInfo.RT.dll"))
             {
-                using (new StreamReader(manifestResourceStream))
+                using (new StreamReader(stream))
                 {
-
-                Program.array = new byte[manifestResourceStream.Length];
-                    manifestResourceStream.Read(Program.array, 0, Program.array.Length);
+                array = new byte[stream.Length];
+                stream.Read(array, 0, array.Length);
                 }
             }
-            AppDomain.CurrentDomain.AssemblyResolve += Program.ResolveAssembly;
-            */
+            AppDomain.CurrentDomain.AssemblyResolve += ResolveAssembly;
+            
         }
-        public static Assembly ResolveAssembly(object A_0, ResolveEventArgs A_1)
+        static Assembly ResolveAssembly(object sender, ResolveEventArgs args)
         {
-            if (!A_1.Name.Contains("Runtime"))
+            if (!args.Name.Contains("Runtime"))
             {
                 return null;
             }
-            return Assembly.Load(Program.array);
+            return Assembly.Load(array);
         }
     }
 }
