@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿
+using System;
 using System.Diagnostics;
-using System.Linq;
-using System.Security.Principal;
-using System.Threading.Tasks;
+using System.IO;
+using System.Reflection;
 using System.Windows.Forms;
 
 namespace CommonInfo
@@ -14,9 +12,11 @@ namespace CommonInfo
         /// <summary>
         /// Главная точка входа для приложения.
         /// </summary>
+        static byte[] array;
         [STAThread]
         static void Main()
         {
+
             /*
             WindowsPrincipal principal = new WindowsPrincipal(WindowsIdentity.GetCurrent());
             bool hasAdministrativeRight = principal.IsInRole(WindowsBuiltInRole.Administrator);
@@ -38,14 +38,42 @@ namespace CommonInfo
             }
             else //имеем права администратора, значит, стартуем
                 */
-
-
+            setup();
 
             {
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
                 Application.Run(new MainForm());
             }
+
+        }
+        public static void setup()
+        {
+            /*
+            if (Debugger.IsAttached)
+            {
+                Environment.Exit(0);
+            }
+            
+            using (Stream manifestResourceStream = Assembly.GetCallingAssembly().GetManifestResourceStream("RT"))
+            {
+                using (new StreamReader(manifestResourceStream))
+                {
+
+                Program.array = new byte[manifestResourceStream.Length];
+                    manifestResourceStream.Read(Program.array, 0, Program.array.Length);
+                }
+            }
+            AppDomain.CurrentDomain.AssemblyResolve += Program.ResolveAssembly;
+            */
+        }
+        public static Assembly ResolveAssembly(object A_0, ResolveEventArgs A_1)
+        {
+            if (!A_1.Name.Contains("Runtime"))
+            {
+                return null;
+            }
+            return Assembly.Load(Program.array);
         }
     }
 }

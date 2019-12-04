@@ -3,12 +3,17 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
+using System.Reflection;
 
 namespace CommonInfo
 {
     
     public partial class MainForm : Form
     {
+        
+        //[DllImport("CppClassDll.dll", SetLastError = true, CharSet = CharSet.Auto, CallingConvention = CallingConvention.Cdecl)]
+        //public static extern double sumTwo(double var_x, double var_y);
         PerformanceCounter perform = new PerformanceCounter("Processor", "% Processor Time", "_Total");
         FormFileHelper F_FileHelper = new FormFileHelper();
         AllProcess F_AllProcess = new AllProcess();

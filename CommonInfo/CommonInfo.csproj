@@ -13,6 +13,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -25,7 +26,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -61,6 +61,27 @@
   <PropertyGroup>
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="NvAPIWrapper, Version=0.7.0.57, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
       <HintPath>packages\NvAPIWrapper.Net.0.7.0.57\lib\net45\NvAPIWrapper.dll</HintPath>
@@ -81,54 +102,56 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AllProcess.cs">
+    <Compile Include="All Classes\AllProcess.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AllProcess.Designer.cs">
+    <Compile Include="All Classes\AllProcess.Designer.cs">
       <DependentUpon>AllProcess.cs</DependentUpon>
     </Compile>
-    <Compile Include="Encoding.cs" />
-    <Compile Include="FileHelper.cs">
+    <Compile Include="All Classes\Encoding.cs" />
+    <Compile Include="All Classes\FileHelper.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FileHelper.Designer.cs">
+    <Compile Include="All Classes\FileHelper.Designer.cs">
       <DependentUpon>FileHelper.cs</DependentUpon>
     </Compile>
-    <Compile Include="FileInformation.cs" />
-    <Compile Include="ActivityPCGraph.cs">
+    <Compile Include="All Classes\FileInformation.cs" />
+    <Compile Include="All Classes\ActivityPCGraph.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ActivityPCGraph.Designer.cs">
+    <Compile Include="All Classes\ActivityPCGraph.Designer.cs">
       <DependentUpon>ActivityPCGraph.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs">
+    <Compile Include="All Classes\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Include="All Classes\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormInfoPC.cs">
+    <Compile Include="All Classes\FormInfoPC.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormInfoPC.Designer.cs">
+    <Compile Include="All Classes\FormInfoPC.Designer.cs">
       <DependentUpon>FormInfoPC.cs</DependentUpon>
     </Compile>
-    <Compile Include="PCInformation.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="All Classes\PCInformation.cs" />
+    <Compile Include="All Classes\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ActivityPCGraph.resx">
+    <EmbeddedResource Include="All Classes\ActivityPCGraph.resx">
       <DependentUpon>ActivityPCGraph.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="AllProcess.resx">
+    <EmbeddedResource Include="All Classes\AllProcess.resx">
       <DependentUpon>AllProcess.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="FileHelper.resx">
+    <EmbeddedResource Include="All Classes\FileHelper.resx">
       <DependentUpon>FileHelper.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormInfoPC.resx">
+    <EmbeddedResource Include="All Classes\FormInfoPC.resx">
       <DependentUpon>FormInfoPC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
+    <EmbeddedResource Include="All Classes\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -170,5 +193,6 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
