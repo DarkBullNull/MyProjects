@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormInfoPC));
             this.label_totalRam = new System.Windows.Forms.Label();
             this.label_useRam = new System.Windows.Forms.Label();
@@ -54,6 +55,7 @@
             this.label_CoolerInforamtion = new System.Windows.Forms.Label();
             this.label_BusInfromation = new System.Windows.Forms.Label();
             this.label_captionVideoCard = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -356,6 +358,12 @@
             this.label_captionVideoCard.TabIndex = 2;
             this.label_captionVideoCard.Text = "CAPTION_VIDEOCARD";
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // FormInfoPC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -420,5 +428,6 @@
         private System.Windows.Forms.Label label_RAMMake;
         private System.Windows.Forms.Label label_MemoryInformation;
         private System.Windows.Forms.Label label_CoolerInforamtion;
+        private System.Windows.Forms.Timer timer1;
     }
 }

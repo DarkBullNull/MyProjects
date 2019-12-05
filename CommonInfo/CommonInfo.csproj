@@ -91,7 +91,7 @@
     <Reference Include="Runtime, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Desktop\Runtime.dll</HintPath>
-      <Private>False</Private>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -121,12 +121,6 @@
       <DependentUpon>FileHelper.cs</DependentUpon>
     </Compile>
     <Compile Include="All Classes\FileInformation.cs" />
-    <Compile Include="All Classes\ActivityPCGraph.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="All Classes\ActivityPCGraph.Designer.cs">
-      <DependentUpon>ActivityPCGraph.cs</DependentUpon>
-    </Compile>
     <Compile Include="All Classes\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,11 +135,8 @@
     </Compile>
     <Compile Include="All Classes\PCInformation.cs" />
     <Compile Include="All Classes\Program.cs" />
+    <Compile Include="All Classes\MemoryWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="All Classes\ActivityPCGraph.resx">
-      <DependentUpon>ActivityPCGraph.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="All Classes\AllProcess.resx">
       <DependentUpon>AllProcess.cs</DependentUpon>
       <SubType>Designer</SubType>

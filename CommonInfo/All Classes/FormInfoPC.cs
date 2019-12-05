@@ -15,17 +15,17 @@ namespace CommonInfo
         {
             InitializeComponent();
         }
-
         private void FormInfoPC_Load(object sender, EventArgs e)
         {
             var infoPC = new PCInformation();
             string releaseId = Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "ReleaseId", "").ToString(); // ~1809 version windows
+            
             label_totalRam.Text = "TotalRAM: " + infoPC.totalRAMGlobal + " Mb";
-            label_useRam.Text = "UseRAM: " + infoPC.useRAMGlobal + " Mb" + " (" + infoPC.percentUseRAMGlobal + "%)";
+            
             label_captionWin.Text = infoPC.captionWindowsGlobal + " (" + infoPC.OSArchitectureGlobal + ")" + " | Version: " + releaseId + " | Build(" + infoPC.versionGlobal + ")";
+            
             label_totalVirtualMemory.Text = "TotalVirtualMemory: " + infoPC.totalVirtualMemoryGlobal + " Mb";
-            label_selectedVirtualMemory.Text = "SelectedVirtualMemory: " + infoPC.selectedVirtualMemoryGlobal + 
-                " Mb" + " (" + infoPC.percentUseVirtualMemoryGlobal + "%)";
+            
             label_captionProcessor.Text = "CPU Name: " + infoPC.captionProcessorGlobal;
             label_numCores.Text = "Count Cores: " + infoPC.numberOfCoresGlobal;
             label_nameUser.Text = "User Name: " + infoPC.nameUserGlobal;
@@ -71,6 +71,7 @@ namespace CommonInfo
             {
                 MessageBox.Show("///GPU-Info work only NVIDIA-family///", "Err0R");
                 MainForm mf = new MainForm();
+                this.Close();
                 mf.Show();
             }
         }
@@ -80,6 +81,14 @@ namespace CommonInfo
             var F_Main = new MainForm();
             F_Main.Show();
             this.Hide();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            var infoPC = new PCInformation();
+            label_useRam.Text = "UseRAM: " + infoPC.useRAMGlobal + " Mb" + " (" + infoPC.percentUseRAMGlobal + "%)";
+            label_selectedVirtualMemory.Text = "SelectedVirtualMemory: " + infoPC.selectedVirtualMemoryGlobal +
+                " Mb" + " (" + infoPC.percentUseVirtualMemoryGlobal + "%)";
         }
     }
 }

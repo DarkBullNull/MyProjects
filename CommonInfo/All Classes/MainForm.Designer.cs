@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.btn_exit = new System.Windows.Forms.Button();
             this.btn_openInfo = new System.Windows.Forms.Button();
             this.btn_FileHelperShow = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.button_ActivityPC = new System.Windows.Forms.Button();
+            this.label_percentProcUse = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_exit
@@ -84,17 +87,32 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button_ActivityPC
+            // label_percentProcUse
             // 
-            this.button_ActivityPC.BackColor = System.Drawing.Color.PaleGoldenrod;
-            this.button_ActivityPC.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button_ActivityPC.Location = new System.Drawing.Point(2, 61);
-            this.button_ActivityPC.Name = "button_ActivityPC";
-            this.button_ActivityPC.Size = new System.Drawing.Size(174, 23);
-            this.button_ActivityPC.TabIndex = 4;
-            this.button_ActivityPC.Text = "ACTIVITY_PC";
-            this.button_ActivityPC.UseVisualStyleBackColor = false;
-            this.button_ActivityPC.Click += new System.EventHandler(this.button_ActivityPC_Click);
+            this.label_percentProcUse.AutoSize = true;
+            this.label_percentProcUse.BackColor = System.Drawing.Color.Black;
+            this.label_percentProcUse.ForeColor = System.Drawing.Color.Cyan;
+            this.label_percentProcUse.Location = new System.Drawing.Point(-1, 58);
+            this.label_percentProcUse.Name = "label_percentProcUse";
+            this.label_percentProcUse.Size = new System.Drawing.Size(66, 13);
+            this.label_percentProcUse.TabIndex = 21;
+            this.label_percentProcUse.Text = "Cpu Usage: ";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(43, 160);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 22;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // MainForm
             // 
@@ -102,7 +120,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(179, 298);
-            this.Controls.Add(this.button_ActivityPC);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.label_percentProcUse);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_FileHelperShow);
             this.Controls.Add(this.btn_openInfo);
@@ -115,7 +134,9 @@
             this.Opacity = 0.8D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Poooof";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -125,7 +146,9 @@
         private System.Windows.Forms.Button btn_openInfo;
         private System.Windows.Forms.Button btn_FileHelperShow;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button_ActivityPC;
+        private System.Windows.Forms.Label label_percentProcUse;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button button2;
     }
 }
 

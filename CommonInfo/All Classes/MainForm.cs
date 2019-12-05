@@ -18,7 +18,7 @@ namespace CommonInfo
         int ValueCPU = 0;
         public MainForm()
         {
-            Initialize.Initalize("CommonInfo.Assembly.dll");
+            //Initialize.Initalize("CommonInfo.Assembly.dll");
             InitializeComponent();
         }
 
@@ -46,22 +46,28 @@ namespace CommonInfo
             F_AllProcess.Show();
         }
 
-        private void button_ActivityPC_Click(object sender, EventArgs e)
-        {
-            ActivityPCGraph F_Activity = new ActivityPCGraph();
-            base.Hide();
-            F_Activity.Show();
-        }
-
         
-        void CPU_TIME()
+        
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
+        int CPU_TIME()
         {
             ValueCPU = Convert.ToInt32(Math.Round(perform.NextValue(), 0));
+            return ValueCPU;
         }
 
-        private void bunifuButton1_Click(object sender, EventArgs e)
+        private void timer1_Tick_1(object sender, EventArgs e)
         {
-            MessageBox.Show("Test");
+            label_percentProcUse.Text = "Cpu Usage: " + CPU_TIME() + "%";
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MemoryWork mw = new MemoryWork();
+            
         }
     }
 }
